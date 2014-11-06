@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		887A2CC51A0BDB4500094E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887A2CC41A0BDB4500094E3C /* AppDelegate.swift */; };
+		887A2CC81A0BDB4500094E3C /* EyeTypeChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 887A2CC61A0BDB4500094E3C /* EyeTypeChat.xcdatamodeld */; };
+		887A2CCA1A0BDB4500094E3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887A2CC91A0BDB4500094E3C /* ViewController.swift */; };
+		887A2CCD1A0BDB4500094E3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887A2CCB1A0BDB4500094E3C /* Main.storyboard */; };
+		887A2CCF1A0BDB4500094E3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 887A2CCE1A0BDB4500094E3C /* Images.xcassets */; };
+		887A2CD21A0BDB4500094E3C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887A2CD01A0BDB4500094E3C /* LaunchScreen.xib */; };
+		887A2CDE1A0BDB4500094E3C /* EyeTypeChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887A2CDD1A0BDB4500094E3C /* EyeTypeChatTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		887A2CD81A0BDB4500094E3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 887A2CB71A0BDB4400094E3C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 887A2CBE1A0BDB4500094E3C;
+			remoteInfo = EyeTypeChat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		887A2CBF1A0BDB4500094E3C /* EyeTypeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EyeTypeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		887A2CC31A0BDB4500094E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		887A2CC41A0BDB4500094E3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		887A2CC71A0BDB4500094E3C /* EyeTypeChat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EyeTypeChat.xcdatamodel; sourceTree = "<group>"; };
+		887A2CC91A0BDB4500094E3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		887A2CCC1A0BDB4500094E3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		887A2CCE1A0BDB4500094E3C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		887A2CD11A0BDB4500094E3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		887A2CD71A0BDB4500094E3C /* EyeTypeChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EyeTypeChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		887A2CDC1A0BDB4500094E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		887A2CDD1A0BDB4500094E3C /* EyeTypeChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTypeChatTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		887A2CBC1A0BDB4500094E3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		887A2CD41A0BDB4500094E3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		887A2CB61A0BDB4400094E3C = {
+			isa = PBXGroup;
+			children = (
+				887A2CC11A0BDB4500094E3C /* EyeTypeChat */,
+				887A2CDA1A0BDB4500094E3C /* EyeTypeChatTests */,
+				887A2CC01A0BDB4500094E3C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		887A2CC01A0BDB4500094E3C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				887A2CBF1A0BDB4500094E3C /* EyeTypeChat.app */,
+				887A2CD71A0BDB4500094E3C /* EyeTypeChatTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		887A2CC11A0BDB4500094E3C /* EyeTypeChat */ = {
+			isa = PBXGroup;
+			children = (
+				887A2CC41A0BDB4500094E3C /* AppDelegate.swift */,
+				887A2CC91A0BDB4500094E3C /* ViewController.swift */,
+				887A2CCB1A0BDB4500094E3C /* Main.storyboard */,
+				887A2CCE1A0BDB4500094E3C /* Images.xcassets */,
+				887A2CD01A0BDB4500094E3C /* LaunchScreen.xib */,
+				887A2CC61A0BDB4500094E3C /* EyeTypeChat.xcdatamodeld */,
+				887A2CC21A0BDB4500094E3C /* Supporting Files */,
+			);
+			path = EyeTypeChat;
+			sourceTree = "<group>";
+		};
+		887A2CC21A0BDB4500094E3C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				887A2CC31A0BDB4500094E3C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		887A2CDA1A0BDB4500094E3C /* EyeTypeChatTests */ = {
+			isa = PBXGroup;
+			children = (
+				887A2CDD1A0BDB4500094E3C /* EyeTypeChatTests.swift */,
+				887A2CDB1A0BDB4500094E3C /* Supporting Files */,
+			);
+			path = EyeTypeChatTests;
+			sourceTree = "<group>";
+		};
+		887A2CDB1A0BDB4500094E3C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				887A2CDC1A0BDB4500094E3C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		887A2CBE1A0BDB4500094E3C /* EyeTypeChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 887A2CE11A0BDB4500094E3C /* Build configuration list for PBXNativeTarget "EyeTypeChat" */;
+			buildPhases = (
+				887A2CBB1A0BDB4500094E3C /* Sources */,
+				887A2CBC1A0BDB4500094E3C /* Frameworks */,
+				887A2CBD1A0BDB4500094E3C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EyeTypeChat;
+			productName = EyeTypeChat;
+			productReference = 887A2CBF1A0BDB4500094E3C /* EyeTypeChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		887A2CD61A0BDB4500094E3C /* EyeTypeChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 887A2CE41A0BDB4500094E3C /* Build configuration list for PBXNativeTarget "EyeTypeChatTests" */;
+			buildPhases = (
+				887A2CD31A0BDB4500094E3C /* Sources */,
+				887A2CD41A0BDB4500094E3C /* Frameworks */,
+				887A2CD51A0BDB4500094E3C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				887A2CD91A0BDB4500094E3C /* PBXTargetDependency */,
+			);
+			name = EyeTypeChatTests;
+			productName = EyeTypeChatTests;
+			productReference = 887A2CD71A0BDB4500094E3C /* EyeTypeChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		887A2CB71A0BDB4400094E3C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "SCV Soft";
+				TargetAttributes = {
+					887A2CBE1A0BDB4500094E3C = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					887A2CD61A0BDB4500094E3C = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 887A2CBE1A0BDB4500094E3C;
+					};
+				};
+			};
+			buildConfigurationList = 887A2CBA1A0BDB4500094E3C /* Build configuration list for PBXProject "EyeTypeChat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 887A2CB61A0BDB4400094E3C;
+			productRefGroup = 887A2CC01A0BDB4500094E3C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				887A2CBE1A0BDB4500094E3C /* EyeTypeChat */,
+				887A2CD61A0BDB4500094E3C /* EyeTypeChatTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		887A2CBD1A0BDB4500094E3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				887A2CCD1A0BDB4500094E3C /* Main.storyboard in Resources */,
+				887A2CD21A0BDB4500094E3C /* LaunchScreen.xib in Resources */,
+				887A2CCF1A0BDB4500094E3C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		887A2CD51A0BDB4500094E3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		887A2CBB1A0BDB4500094E3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				887A2CCA1A0BDB4500094E3C /* ViewController.swift in Sources */,
+				887A2CC51A0BDB4500094E3C /* AppDelegate.swift in Sources */,
+				887A2CC81A0BDB4500094E3C /* EyeTypeChat.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		887A2CD31A0BDB4500094E3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				887A2CDE1A0BDB4500094E3C /* EyeTypeChatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		887A2CD91A0BDB4500094E3C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 887A2CBE1A0BDB4500094E3C /* EyeTypeChat */;
+			targetProxy = 887A2CD81A0BDB4500094E3C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		887A2CCB1A0BDB4500094E3C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				887A2CCC1A0BDB4500094E3C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		887A2CD01A0BDB4500094E3C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				887A2CD11A0BDB4500094E3C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		887A2CDF1A0BDB4500094E3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		887A2CE01A0BDB4500094E3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		887A2CE21A0BDB4500094E3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = EyeTypeChat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		887A2CE31A0BDB4500094E3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = EyeTypeChat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		887A2CE51A0BDB4500094E3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = EyeTypeChatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EyeTypeChat.app/EyeTypeChat";
+			};
+			name = Debug;
+		};
+		887A2CE61A0BDB4500094E3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = EyeTypeChatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EyeTypeChat.app/EyeTypeChat";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		887A2CBA1A0BDB4500094E3C /* Build configuration list for PBXProject "EyeTypeChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				887A2CDF1A0BDB4500094E3C /* Debug */,
+				887A2CE01A0BDB4500094E3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		887A2CE11A0BDB4500094E3C /* Build configuration list for PBXNativeTarget "EyeTypeChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				887A2CE21A0BDB4500094E3C /* Debug */,
+				887A2CE31A0BDB4500094E3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		887A2CE41A0BDB4500094E3C /* Build configuration list for PBXNativeTarget "EyeTypeChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				887A2CE51A0BDB4500094E3C /* Debug */,
+				887A2CE61A0BDB4500094E3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		887A2CC61A0BDB4500094E3C /* EyeTypeChat.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				887A2CC71A0BDB4500094E3C /* EyeTypeChat.xcdatamodel */,
+			);
+			currentVersion = 887A2CC71A0BDB4500094E3C /* EyeTypeChat.xcdatamodel */;
+			path = EyeTypeChat.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 887A2CB71A0BDB4400094E3C /* Project object */;
+}
