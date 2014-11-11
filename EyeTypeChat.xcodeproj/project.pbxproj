@@ -14,6 +14,7 @@
 		887A2CCF1A0BDB4500094E3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 887A2CCE1A0BDB4500094E3C /* Images.xcassets */; };
 		887A2CD21A0BDB4500094E3C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887A2CD01A0BDB4500094E3C /* LaunchScreen.xib */; };
 		887A2CDE1A0BDB4500094E3C /* EyeTypeChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887A2CDD1A0BDB4500094E3C /* EyeTypeChatTests.swift */; };
+		88C5237A1A127F13005E0D71 /* libTelegraphKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C523791A127EBC005E0D71 /* libTelegraphKit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +24,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 887A2CBE1A0BDB4500094E3C;
 			remoteInfo = EyeTypeChat;
+		};
+		88C523781A127EBC005E0D71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88C523741A127EBB005E0D71 /* TelegraphKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D07041EB15891C72008AA657;
+			remoteInfo = TelegraphKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -38,6 +46,7 @@
 		887A2CD71A0BDB4500094E3C /* EyeTypeChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EyeTypeChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		887A2CDC1A0BDB4500094E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		887A2CDD1A0BDB4500094E3C /* EyeTypeChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTypeChatTests.swift; sourceTree = "<group>"; };
+		88C523741A127EBB005E0D71 /* TelegraphKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TelegraphKit.xcodeproj; path = TelegraphKit/TelegraphKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88C5237A1A127F13005E0D71 /* libTelegraphKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +73,7 @@
 			children = (
 				887A2CC11A0BDB4500094E3C /* EyeTypeChat */,
 				887A2CDA1A0BDB4500094E3C /* EyeTypeChatTests */,
+				88C523731A127E95005E0D71 /* TelegraphKit */,
 				887A2CC01A0BDB4500094E3C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,6 +124,22 @@
 				887A2CDC1A0BDB4500094E3C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		88C523731A127E95005E0D71 /* TelegraphKit */ = {
+			isa = PBXGroup;
+			children = (
+				88C523741A127EBB005E0D71 /* TelegraphKit.xcodeproj */,
+			);
+			name = TelegraphKit;
+			sourceTree = "<group>";
+		};
+		88C523751A127EBB005E0D71 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88C523791A127EBC005E0D71 /* libTelegraphKit.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +209,12 @@
 			mainGroup = 887A2CB61A0BDB4400094E3C;
 			productRefGroup = 887A2CC01A0BDB4500094E3C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 88C523751A127EBB005E0D71 /* Products */;
+					ProjectRef = 88C523741A127EBB005E0D71 /* TelegraphKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				887A2CBE1A0BDB4500094E3C /* EyeTypeChat */,
@@ -189,6 +222,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		88C523791A127EBC005E0D71 /* libTelegraphKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libTelegraphKit.a;
+			remoteRef = 88C523781A127EBC005E0D71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		887A2CBD1A0BDB4500094E3C /* Resources */ = {
@@ -411,6 +454,7 @@
 				887A2CE31A0BDB4500094E3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		887A2CE41A0BDB4500094E3C /* Build configuration list for PBXNativeTarget "EyeTypeChatTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +463,7 @@
 				887A2CE61A0BDB4500094E3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
