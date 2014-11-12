@@ -44,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		885ABDE41A13E1DD00552B16 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		887A2CBF1A0BDB4500094E3C /* EyeTypeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EyeTypeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		887A2CC31A0BDB4500094E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		887A2CC41A0BDB4500094E3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +122,7 @@
 			children = (
 				887A2CC41A0BDB4500094E3C /* AppDelegate.swift */,
 				887A2CC91A0BDB4500094E3C /* ViewController.swift */,
+				885ABDE41A13E1DD00552B16 /* MyPlayground.playground */,
 				887A2CCB1A0BDB4500094E3C /* Main.storyboard */,
 				887A2CCE1A0BDB4500094E3C /* Images.xcassets */,
 				887A2CD01A0BDB4500094E3C /* LaunchScreen.xib */,
