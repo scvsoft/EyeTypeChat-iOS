@@ -14,6 +14,15 @@
 		887A2CCF1A0BDB4500094E3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 887A2CCE1A0BDB4500094E3C /* Images.xcassets */; };
 		887A2CD21A0BDB4500094E3C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887A2CD01A0BDB4500094E3C /* LaunchScreen.xib */; };
 		887A2CDE1A0BDB4500094E3C /* EyeTypeChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887A2CDD1A0BDB4500094E3C /* EyeTypeChatTests.swift */; };
+		88BC6E7D1A12A6F600D3A54E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BC6E7C1A12A6F600D3A54E /* CoreGraphics.framework */; };
+		88BC6E801A12A78C00D3A54E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BC6E7F1A12A78C00D3A54E /* MediaPlayer.framework */; };
+		88BC6E821A12A7AC00D3A54E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BC6E811A12A7AC00D3A54E /* MobileCoreServices.framework */; };
+		88BC6E841A12A7D600D3A54E /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BC6E831A12A7D600D3A54E /* AssetsLibrary.framework */; };
+		88BC6E861A12A7E200D3A54E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BC6E851A12A7E200D3A54E /* MapKit.framework */; };
+		88BC6E881A12A7E900D3A54E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BC6E871A12A7E900D3A54E /* MessageUI.framework */; };
+		88BC6E8A1A12A83F00D3A54E /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BC6E891A12A83F00D3A54E /* ImageIO.framework */; };
+		88BC6E8E1A12AD3D00D3A54E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BC6E8D1A12AD3D00D3A54E /* libz.dylib */; };
+		88BC6E901A12ADB300D3A54E /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BC6E8F1A12ADB300D3A54E /* libstdc++.6.dylib */; };
 		88C5237A1A127F13005E0D71 /* libTelegraphKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C523791A127EBC005E0D71 /* libTelegraphKit.a */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +55,17 @@
 		887A2CD71A0BDB4500094E3C /* EyeTypeChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EyeTypeChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		887A2CDC1A0BDB4500094E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		887A2CDD1A0BDB4500094E3C /* EyeTypeChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTypeChatTests.swift; sourceTree = "<group>"; };
+		88BC6E7C1A12A6F600D3A54E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		88BC6E7F1A12A78C00D3A54E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		88BC6E811A12A7AC00D3A54E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		88BC6E831A12A7D600D3A54E /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		88BC6E851A12A7E200D3A54E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		88BC6E871A12A7E900D3A54E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		88BC6E891A12A83F00D3A54E /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		88BC6E8D1A12AD3D00D3A54E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		88BC6E8F1A12ADB300D3A54E /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		88C523741A127EBB005E0D71 /* TelegraphKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TelegraphKit.xcodeproj; path = TelegraphKit/TelegraphKit.xcodeproj; sourceTree = "<group>"; };
+		88C5237B1A12933E005E0D71 /* EyeTypeChat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EyeTypeChat-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +74,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				88C5237A1A127F13005E0D71 /* libTelegraphKit.a in Frameworks */,
+				88BC6E841A12A7D600D3A54E /* AssetsLibrary.framework in Frameworks */,
+				88BC6E7D1A12A6F600D3A54E /* CoreGraphics.framework in Frameworks */,
+				88BC6E8A1A12A83F00D3A54E /* ImageIO.framework in Frameworks */,
+				88BC6E901A12ADB300D3A54E /* libstdc++.6.dylib in Frameworks */,
+				88BC6E8E1A12AD3D00D3A54E /* libz.dylib in Frameworks */,
+				88BC6E861A12A7E200D3A54E /* MapKit.framework in Frameworks */,
+				88BC6E801A12A78C00D3A54E /* MediaPlayer.framework in Frameworks */,
+				88BC6E881A12A7E900D3A54E /* MessageUI.framework in Frameworks */,
+				88BC6E821A12A7AC00D3A54E /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +102,7 @@
 				887A2CC11A0BDB4500094E3C /* EyeTypeChat */,
 				887A2CDA1A0BDB4500094E3C /* EyeTypeChatTests */,
 				88C523731A127E95005E0D71 /* TelegraphKit */,
+				88BC6E911A12B02000D3A54E /* Frameworks */,
 				887A2CC01A0BDB4500094E3C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,6 +126,7 @@
 				887A2CD01A0BDB4500094E3C /* LaunchScreen.xib */,
 				887A2CC61A0BDB4500094E3C /* EyeTypeChat.xcdatamodeld */,
 				887A2CC21A0BDB4500094E3C /* Supporting Files */,
+				88C5237B1A12933E005E0D71 /* EyeTypeChat-Bridging-Header.h */,
 			);
 			path = EyeTypeChat;
 			sourceTree = "<group>";
@@ -124,6 +154,22 @@
 				887A2CDC1A0BDB4500094E3C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		88BC6E911A12B02000D3A54E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88BC6E831A12A7D600D3A54E /* AssetsLibrary.framework */,
+				88BC6E7C1A12A6F600D3A54E /* CoreGraphics.framework */,
+				88BC6E891A12A83F00D3A54E /* ImageIO.framework */,
+				88BC6E8F1A12ADB300D3A54E /* libstdc++.6.dylib */,
+				88BC6E8D1A12AD3D00D3A54E /* libz.dylib */,
+				88BC6E851A12A7E200D3A54E /* MapKit.framework */,
+				88BC6E7F1A12A78C00D3A54E /* MediaPlayer.framework */,
+				88BC6E871A12A7E900D3A54E /* MessageUI.framework */,
+				88BC6E811A12A7AC00D3A54E /* MobileCoreServices.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		88C523731A127E95005E0D71 /* TelegraphKit */ = {
@@ -306,8 +352,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -317,6 +361,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -330,18 +375,27 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-Wextra";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 2;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/TelegraphKit/TelegraphKit/**";
 			};
 			name = Debug;
 		};
@@ -349,8 +403,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -360,6 +412,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -367,16 +420,25 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/TelegraphKit/TelegraphKit/**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -385,9 +447,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = EyeTypeChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EyeTypeChat/EyeTypeChat-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -395,9 +461,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = EyeTypeChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EyeTypeChat/EyeTypeChat-Bridging-Header.h";
 			};
 			name = Release;
 		};

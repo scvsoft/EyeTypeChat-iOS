@@ -11,7 +11,7 @@
 #import "TGVideoInfo.h"
 #import "TGImageInfo.h"
 
-#define TGVideoMediaAttachmentType ((int)0x338EAA20)
+enum : int { TGVideoMediaAttachmentType = 0x338EAA20 };
 
 @interface TGVideoMediaAttachment : TGMediaAttachment <TGMediaAttachmentParser>
 

@@ -8,7 +8,7 @@
 
 #import "TGMediaAttachment.h"
 
-#define TGLocalMessageMetaMediaAttachmentType 0x944DE6B6
+enum : int { TGLocalMessageMetaMediaAttachmentType = (int)0x944DE6B6 };
 
 @interface TGLocalMessageMetaMediaAttachment : TGMediaAttachment <TGMediaAttachmentParser>
 

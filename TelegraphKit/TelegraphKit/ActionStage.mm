@@ -116,11 +116,17 @@ ActionStage *ActionStageInstance()
     return false;
 }
 
-#ifdef DEBUG
-- (void)dispatchOnStageQueueDebug:(const char *)function line:(int)line block:(dispatch_block_t)block
-#else
 - (void)dispatchOnStageQueue:(dispatch_block_t)block
-#endif
+{
+    [self dispatchOnStageQueueDebug:NO function:nil line:0 block:block];
+}
+
+- (void)dispatchOnStageQueueDebug:(const char *)function line:(int)line block:(dispatch_block_t)block
+{
+    [self dispatchOnStageQueueDebug:YES function:function line:line block:block];
+}
+
+- (void)dispatchOnStageQueueDebug:(BOOL)debug function:(const char *)function line:(int)line block:(dispatch_block_t)block
 {
     bool isGraphQueue = false;
     if (dispatch_get_specific != NULL)
@@ -142,9 +148,11 @@ ActionStage *ActionStageInstance()
         block();
         
 #ifdef DEBUG
+        if (debug) {
         CFAbsoluteTime executionTime = (CFAbsoluteTimeGetCurrent() - startTime);
         if (executionTime > 0.1)
             TGLog(@"***** Dispatch from %s:%d took %f s", function, line, executionTime);
+        }
 #endif
     }
     else
@@ -156,9 +164,11 @@ ActionStage *ActionStageInstance()
             
             block();
             
+            if (debug) {
             CFAbsoluteTime executionTime = (CFAbsoluteTimeGetCurrent() - startTime);
             if (executionTime > 0.1)
                 TGLog(@"***** Dispatch from %s:%d took %f s", function, line, executionTime);
+            }
         });
 #else
         dispatch_async([self globalStageDispatchQueue], block);

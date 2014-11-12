@@ -8,7 +8,7 @@
 
 #import "TGMediaAttachment.h"
 
-#define TGContactMediaAttachmentType ((int)0xB90A5663)
+enum : int { TGContactMediaAttachmentType = (int) 0xB90A5663 };
 
 @interface TGContactMediaAttachment : TGMediaAttachment <TGMediaAttachmentParser>
 

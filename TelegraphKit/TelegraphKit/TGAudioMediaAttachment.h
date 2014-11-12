@@ -8,7 +8,7 @@
 
 #import "TGMediaAttachment.h"
 
-#define TGAudioMediaAttachmentType 0x3A0E7A32
+enum : int { TGAudioMediaAttachmentType = 0x3A0E7A32 };
 
 @interface TGAudioMediaAttachment : TGMediaAttachment
 

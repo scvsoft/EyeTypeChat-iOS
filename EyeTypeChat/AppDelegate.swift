@@ -14,6 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var preloadedDialogList: NSArray = NSArray();
+    var preloadedDialogListUids: NSArray = NSArray();
+
+    override init() {
+        super.init();
+        beginEarlyInitialization();
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -42,6 +49,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+
+    // Telegram
+
+    func beginEarlyInitialization() {
+        let preloadedDialogListSemaphore = dispatch_semaphore_create(0);
+
+        ActionStageInstance().dispatchOnStageQueue({
+            TGMessage.registerMediaAttachmentParser(TGActionMediaAttachmentType, parser:TGActionMediaAttachment());
+            TGMessage.registerMediaAttachmentParser(TGImageMediaAttachmentType, parser:TGImageMediaAttachment());
+            TGMessage.registerMediaAttachmentParser(TGLocationMediaAttachmentType, parser:TGLocationMediaAttachment());
+            TGMessage.registerMediaAttachmentParser(TGLocalMessageMetaMediaAttachmentType, parser:TGLocalMessageMetaMediaAttachment());
+            TGMessage.registerMediaAttachmentParser(TGVideoMediaAttachmentType, parser:TGVideoMediaAttachment());
+            TGMessage.registerMediaAttachmentParser(TGContactMediaAttachmentType, parser:TGContactMediaAttachment());
+            TGMessage.registerMediaAttachmentParser(TGForwardedMessageMediaAttachmentType, parser:TGForwardedMessageMediaAttachment());
+            TGMessage.registerMediaAttachmentParser(TGUnsupportedMediaAttachmentType, parser:TGUnsupportedMediaAttachment());
+
+            TGDatabase.setDatabaseName("tgdata");
+            TGDatabase.setLiveMessagesDispatchPath("/tg/conversations");
+            TGDatabase.setLiveUnreadCountDispatchPath("/tg/unreadCount");
+
+            TGDatabase.instance().markAllPendingMessagesAsFailed();
+            TGDatabase.instance().loadConversationListInitial({
+                (dialogList, userIds) in
+                self.preloadedDialogList = dialogList;
+                self.preloadedDialogListUids = userIds;
+
+                dispatch_semaphore_signal(preloadedDialogListSemaphore);
+            });
+        });
     }
 
     // MARK: - Core Data stack

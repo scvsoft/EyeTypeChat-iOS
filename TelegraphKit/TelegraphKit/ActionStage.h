@@ -19,7 +19,7 @@ typedef enum {
 } ASStatus;
 
 #ifdef DEBUG
-#define dispatchOnStageQueue dispatchOnStageQueueDebug:__FILE__ line:__LINE__ block
+//#define dispatchOnStageQueue dispatchOnStageQueueDebug:__FILE__ line:__LINE__ block
 #endif
 
 @class ActionStage;
@@ -41,11 +41,8 @@ typedef enum {
 @interface ActionStage : NSObject
 
 - (dispatch_queue_t)globalStageDispatchQueue;
-#ifdef DEBUG
 - (void)dispatchOnStageQueueDebug:(const char *)function line:(int)line block:(dispatch_block_t)block;
-#else
 - (void)dispatchOnStageQueue:(dispatch_block_t)block;
-#endif
 
 - (NSFileManager *)globalFileManager;
 

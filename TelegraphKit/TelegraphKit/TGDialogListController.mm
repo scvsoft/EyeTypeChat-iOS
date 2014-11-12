@@ -1141,9 +1141,9 @@ static UIImage *backgroundNormalHighlighted = nil;
     ((UIImageView *)cell.backgroundView).image = backgroundNormal;
     ((UIImageView *)cell.selectedBackgroundView).image = backgroundNormalHighlighted;
     
-    if (cell.reuseTag != (int)conversation || cell.conversationId != conversation.conversationId)
+    if (cell.reuseTag != (NSInteger)conversation || cell.conversationId != conversation.conversationId)
     {
-        cell.reuseTag = (int)conversation;
+        cell.reuseTag = (NSInteger)conversation;
         cell.conversationId = conversation.conversationId;
     
         cell.date = conversation.date;

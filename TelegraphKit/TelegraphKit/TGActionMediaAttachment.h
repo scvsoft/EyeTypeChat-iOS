@@ -8,7 +8,7 @@
 
 #import "TGMediaAttachment.h"
 
-#define TGActionMediaAttachmentType 0x1167E28B
+enum : int { TGActionMediaAttachmentType = 0x1167E28B };
 
 typedef enum {
     TGMessageActionNone = 0,

@@ -8,7 +8,7 @@
 
 #import "TGMediaAttachment.h"
 
-#define TGForwardedMessageMediaAttachmentType ((int)0xAA1050C1)
+enum : int { TGForwardedMessageMediaAttachmentType = (int)0xAA1050C1 };
 
 @interface TGForwardedMessageMediaAttachment : TGMediaAttachment <NSCopying, TGMediaAttachmentParser>
 

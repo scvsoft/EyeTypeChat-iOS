@@ -3475,7 +3475,7 @@ static dispatch_queue_t videoProcessingQueue()
             messageItemView.showAvatar = false;
         }
         
-        if (messageItemView.messageItemHash == (int)messageItem)
+        if (messageItemView.messageItemHash == (NSInteger)messageItem)
         {
             //TGLog(@"Optimized cell 0x%.8x", (int)messageItem);
             [messageItemView updateState:false];
@@ -3483,7 +3483,7 @@ static dispatch_queue_t videoProcessingQueue()
         else
         {
             [messageItemView resetView:_messageMetrics];
-            messageItemView.messageItemHash = (int)messageItem;
+            messageItemView.messageItemHash = (NSInteger)messageItem;
         }
         
         if (_currentlyHighlightedMid != 0 && messageItem.message.mid == _currentlyHighlightedMid)

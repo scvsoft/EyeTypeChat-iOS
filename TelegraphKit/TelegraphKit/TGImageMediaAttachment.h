@@ -10,7 +10,7 @@
 
 #import "TGImageInfo.h"
 
-#define TGImageMediaAttachmentType 0x269BD8A8
+enum : int { TGImageMediaAttachmentType = 0x269BD8A8 };
 
 @interface TGImageMediaAttachment : TGMediaAttachment <TGMediaAttachmentParser, NSCopying>
 

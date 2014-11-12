@@ -8,7 +8,7 @@
 
 #import "TGMediaAttachment.h"
 
-#define TGLocationMediaAttachmentType 0x0C9ED06E
+enum : int { TGLocationMediaAttachmentType = 0x0C9ED06E };
 
 @interface TGLocationMediaAttachment : TGMediaAttachment <TGMediaAttachmentParser>
 
