@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E9B341BA996967017148759 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A49492BC4CA902EDA58BC35 /* libPods.a */; };
+		885D57611A25062D00912290 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 885D57601A25062D00912290 /* Podfile */; };
+		885D576A1A2513FF00912290 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885D57691A2513FF00912290 /* CoreLocation.framework */; };
+		885D57701A25159000912290 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885D576F1A25159000912290 /* SystemConfiguration.framework */; };
 		887A2CC51A0BDB4500094E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887A2CC41A0BDB4500094E3C /* AppDelegate.swift */; };
 		887A2CC81A0BDB4500094E3C /* EyeTypeChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 887A2CC61A0BDB4500094E3C /* EyeTypeChat.xcdatamodeld */; };
 		887A2CCA1A0BDB4500094E3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887A2CC91A0BDB4500094E3C /* ViewController.swift */; };
@@ -44,7 +48,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		883793181A278BDB00AA856D /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		885ABDE41A13E1DD00552B16 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		885D57601A25062D00912290 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		885D57691A2513FF00912290 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		885D576F1A25159000912290 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		885D57741A25192D00912290 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		885D57771A25194A00912290 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		887A2CBF1A0BDB4500094E3C /* EyeTypeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EyeTypeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		887A2CC31A0BDB4500094E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		887A2CC41A0BDB4500094E3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +77,9 @@
 		88BC6E8F1A12ADB300D3A54E /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		88C523741A127EBB005E0D71 /* TelegraphKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TelegraphKit.xcodeproj; path = TelegraphKit/TelegraphKit.xcodeproj; sourceTree = "<group>"; };
 		88C5237B1A12933E005E0D71 /* EyeTypeChat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EyeTypeChat-Bridging-Header.h"; sourceTree = "<group>"; };
+		9A49492BC4CA902EDA58BC35 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB9850928605DEA320DC148E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		EBBEC700B4B03A0A9AB3CD8F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +97,9 @@
 				88BC6E801A12A78C00D3A54E /* MediaPlayer.framework in Frameworks */,
 				88BC6E881A12A7E900D3A54E /* MessageUI.framework in Frameworks */,
 				88BC6E821A12A7AC00D3A54E /* MobileCoreServices.framework in Frameworks */,
+				5E9B341BA996967017148759 /* libPods.a in Frameworks */,
+				885D576A1A2513FF00912290 /* CoreLocation.framework in Frameworks */,
+				885D57701A25159000912290 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +121,7 @@
 				88C523731A127E95005E0D71 /* TelegraphKit */,
 				88BC6E911A12B02000D3A54E /* Frameworks */,
 				887A2CC01A0BDB4500094E3C /* Products */,
+				E8B101119CF8F4EA3AC3FFAA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				887A2CC31A0BDB4500094E3C /* Info.plist */,
+				885D57601A25062D00912290 /* Podfile */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -161,6 +179,11 @@
 		88BC6E911A12B02000D3A54E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				883793181A278BDB00AA856D /* libstdc++.dylib */,
+				885D57771A25194A00912290 /* GLKit.framework */,
+				885D57741A25192D00912290 /* OpenGLES.framework */,
+				885D576F1A25159000912290 /* SystemConfiguration.framework */,
+				885D57691A2513FF00912290 /* CoreLocation.framework */,
 				88BC6E831A12A7D600D3A54E /* AssetsLibrary.framework */,
 				88BC6E7C1A12A6F600D3A54E /* CoreGraphics.framework */,
 				88BC6E891A12A83F00D3A54E /* ImageIO.framework */,
@@ -170,6 +193,7 @@
 				88BC6E7F1A12A78C00D3A54E /* MediaPlayer.framework */,
 				88BC6E871A12A7E900D3A54E /* MessageUI.framework */,
 				88BC6E811A12A7AC00D3A54E /* MobileCoreServices.framework */,
+				9A49492BC4CA902EDA58BC35 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -190,6 +214,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		E8B101119CF8F4EA3AC3FFAA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EBBEC700B4B03A0A9AB3CD8F /* Pods.debug.xcconfig */,
+				EB9850928605DEA320DC148E /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -197,9 +230,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 887A2CE11A0BDB4500094E3C /* Build configuration list for PBXNativeTarget "EyeTypeChat" */;
 			buildPhases = (
+				B96C9B83561203529FF2C75B /* Check Pods Manifest.lock */,
 				887A2CBB1A0BDB4500094E3C /* Sources */,
 				887A2CBC1A0BDB4500094E3C /* Frameworks */,
 				887A2CBD1A0BDB4500094E3C /* Resources */,
+				F423A37464FE7F377AC5F586 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,6 +269,7 @@
 		887A2CB71A0BDB4400094E3C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ETC;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "SCV Soft";
 				TargetAttributes = {
@@ -288,6 +324,7 @@
 			files = (
 				887A2CCD1A0BDB4500094E3C /* Main.storyboard in Resources */,
 				887A2CD21A0BDB4500094E3C /* LaunchScreen.xib in Resources */,
+				885D57611A25062D00912290 /* Podfile in Resources */,
 				887A2CCF1A0BDB4500094E3C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +337,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B96C9B83561203529FF2C75B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F423A37464FE7F377AC5F586 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		887A2CBB1A0BDB4500094E3C /* Sources */ = {
@@ -354,6 +424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -405,6 +476,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -447,6 +519,7 @@
 		};
 		887A2CE21A0BDB4500094E3C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBBEC700B4B03A0A9AB3CD8F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -461,6 +534,7 @@
 		};
 		887A2CE31A0BDB4500094E3C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB9850928605DEA320DC148E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
