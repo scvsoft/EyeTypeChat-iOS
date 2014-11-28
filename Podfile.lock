@@ -1,1 +1,23 @@
-COCOAPODS: 0.33.1
+PODS:
+  - EyeType (0.0.1):
+    - OpenCV (~> 2.4.9.1)
+  - OpenCV (2.4.9.1)
+
+DEPENDENCIES:
+  - EyeType (from `git://github.com/scvsoft/EyeType-iOS`, branch `Pod`)
+
+EXTERNAL SOURCES:
+  EyeType:
+    :branch: Pod
+    :git: git://github.com/scvsoft/EyeType-iOS
+
+CHECKOUT OPTIONS:
+  EyeType:
+    :commit: 80f2c55c24b9af4c198a1369b27836323e6e3825
+    :git: git://github.com/scvsoft/EyeType-iOS
+
+SPEC CHECKSUMS:
+  EyeType: 423baaab62c948a8075a65f50136a5808f33119d
+  OpenCV: 4190ad68e79e1b9ae7ac53d749e96e8c05041e45
+
+COCOAPODS: 0.35.0
