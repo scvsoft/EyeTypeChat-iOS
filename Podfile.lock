@@ -13,7 +13,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   EyeType:
-    :commit: 80f2c55c24b9af4c198a1369b27836323e6e3825
+    :commit: c7d7827cb9490fcc498878174e80a1312f18cf99
     :git: git://github.com/scvsoft/EyeType-iOS
 
 SPEC CHECKSUMS:

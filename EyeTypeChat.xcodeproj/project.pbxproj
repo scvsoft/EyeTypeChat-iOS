@@ -13,11 +13,14 @@
 		885D57701A25159000912290 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885D576F1A25159000912290 /* SystemConfiguration.framework */; };
 		887A2CC51A0BDB4500094E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887A2CC41A0BDB4500094E3C /* AppDelegate.swift */; };
 		887A2CC81A0BDB4500094E3C /* EyeTypeChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 887A2CC61A0BDB4500094E3C /* EyeTypeChat.xcdatamodeld */; };
-		887A2CCA1A0BDB4500094E3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887A2CC91A0BDB4500094E3C /* ViewController.swift */; };
+		887A2CCA1A0BDB4500094E3C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887A2CC91A0BDB4500094E3C /* MainViewController.swift */; };
 		887A2CCD1A0BDB4500094E3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887A2CCB1A0BDB4500094E3C /* Main.storyboard */; };
 		887A2CCF1A0BDB4500094E3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 887A2CCE1A0BDB4500094E3C /* Images.xcassets */; };
 		887A2CD21A0BDB4500094E3C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887A2CD01A0BDB4500094E3C /* LaunchScreen.xib */; };
 		887A2CDE1A0BDB4500094E3C /* EyeTypeChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887A2CDD1A0BDB4500094E3C /* EyeTypeChatTests.swift */; };
+		88A759A11A2F7B070005B04C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A759A01A2F7B070005B04C /* MainViewModel.swift */; };
+		88A759AC1A2F9D4D0005B04C /* EyeControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A759AB1A2F9D4D0005B04C /* EyeControllable.swift */; };
+		88A759B11A2F9FC10005B04C /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A759B01A2F9FC10005B04C /* KeyboardViewController.swift */; };
 		88BC6E7D1A12A6F600D3A54E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BC6E7C1A12A6F600D3A54E /* CoreGraphics.framework */; };
 		88BC6E801A12A78C00D3A54E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BC6E7F1A12A78C00D3A54E /* MediaPlayer.framework */; };
 		88BC6E821A12A7AC00D3A54E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BC6E811A12A7AC00D3A54E /* MobileCoreServices.framework */; };
@@ -59,13 +62,16 @@
 		887A2CC31A0BDB4500094E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		887A2CC41A0BDB4500094E3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		887A2CC71A0BDB4500094E3C /* EyeTypeChat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EyeTypeChat.xcdatamodel; sourceTree = "<group>"; };
-		887A2CC91A0BDB4500094E3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		887A2CC91A0BDB4500094E3C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		887A2CCC1A0BDB4500094E3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		887A2CCE1A0BDB4500094E3C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		887A2CD11A0BDB4500094E3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		887A2CD71A0BDB4500094E3C /* EyeTypeChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EyeTypeChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		887A2CDC1A0BDB4500094E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		887A2CDD1A0BDB4500094E3C /* EyeTypeChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTypeChatTests.swift; sourceTree = "<group>"; };
+		88A759A01A2F7B070005B04C /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		88A759AB1A2F9D4D0005B04C /* EyeControllable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyeControllable.swift; sourceTree = "<group>"; };
+		88A759B01A2F9FC10005B04C /* KeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		88BC6E7C1A12A6F600D3A54E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		88BC6E7F1A12A78C00D3A54E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		88BC6E811A12A7AC00D3A54E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -138,7 +144,10 @@
 			isa = PBXGroup;
 			children = (
 				887A2CC41A0BDB4500094E3C /* AppDelegate.swift */,
-				887A2CC91A0BDB4500094E3C /* ViewController.swift */,
+				887A2CC91A0BDB4500094E3C /* MainViewController.swift */,
+				88A759A01A2F7B070005B04C /* MainViewModel.swift */,
+				88A759AB1A2F9D4D0005B04C /* EyeControllable.swift */,
+				88A759B01A2F9FC10005B04C /* KeyboardViewController.swift */,
 				885ABDE41A13E1DD00552B16 /* MyPlayground.playground */,
 				887A2CCB1A0BDB4500094E3C /* Main.storyboard */,
 				887A2CCE1A0BDB4500094E3C /* Images.xcassets */,
@@ -376,9 +385,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				887A2CCA1A0BDB4500094E3C /* ViewController.swift in Sources */,
+				887A2CCA1A0BDB4500094E3C /* MainViewController.swift in Sources */,
+				88A759B11A2F9FC10005B04C /* KeyboardViewController.swift in Sources */,
 				887A2CC51A0BDB4500094E3C /* AppDelegate.swift in Sources */,
 				887A2CC81A0BDB4500094E3C /* EyeTypeChat.xcdatamodeld in Sources */,
+				88A759A11A2F7B070005B04C /* MainViewModel.swift in Sources */,
+				88A759AC1A2F9D4D0005B04C /* EyeControllable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
