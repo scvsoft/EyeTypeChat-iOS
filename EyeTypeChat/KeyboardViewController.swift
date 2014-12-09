@@ -120,7 +120,7 @@ class KeyboardViewController: UIViewController, EyeControllable {
             updateSelection()
         }
         else {
-            NSLog("Cancel!")
+            navigationController?.popViewControllerAnimated(true)
         }
     }
 

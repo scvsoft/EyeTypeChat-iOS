@@ -12,6 +12,7 @@ class MainViewController: ETVideoSourceViewController {
 
     var timer: NSTimer?
     var subNavigationController: UINavigationController!
+    var conversationNavigationController: UINavigationController!
     var ignoreNextTick = false
 
     var myModel: MainViewModel {
@@ -77,6 +78,15 @@ class MainViewController: ETVideoSourceViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "subNavigationController") {
             subNavigationController = segue.destinationViewController as UINavigationController
+        }
+        else if (segue.identifier == "conversation") {
+            conversationNavigationController = segue.destinationViewController as UINavigationController
+        }
+    }
+
+    override var mainViewController: MainViewController? {
+        get {
+            return self
         }
     }
 
