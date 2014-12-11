@@ -7,3 +7,4 @@
 #import "TGMessage.h"
 #import "TGDatabase.h"
 #import <EyeType/ETVideoSourceViewController.h>
+#import "SwiftBridge.h"

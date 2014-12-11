@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5E9B341BA996967017148759 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A49492BC4CA902EDA58BC35 /* libPods.a */; };
+		8823D7AE1A30E3D200271406 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8823D7AD1A30E3D200271406 /* ConversationViewController.swift */; };
+		8823D7B11A30E8B500271406 /* UIViewController+EyeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8823D7B01A30E8B500271406 /* UIViewController+EyeType.swift */; };
+		8823D7B31A30F65E00271406 /* BaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8823D7B21A30F65E00271406 /* BaseMenuViewController.swift */; };
+		8856809F1A374B2D005F2BB0 /* fixedMenus.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8856809E1A374B2D005F2BB0 /* fixedMenus.plist */; };
+		885680A21A374BB8005F2BB0 /* FixedMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885680A11A374BB8005F2BB0 /* FixedMenuViewController.swift */; };
+		885680A51A376E47005F2BB0 /* SwiftBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 885680A41A376E47005F2BB0 /* SwiftBridge.m */; };
+		885680A71A378E55005F2BB0 /* FixedMenuViewController+Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885680A61A378E55005F2BB0 /* FixedMenuViewController+Commands.swift */; };
 		885D57611A25062D00912290 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 885D57601A25062D00912290 /* Podfile */; };
 		885D576A1A2513FF00912290 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885D57691A2513FF00912290 /* CoreLocation.framework */; };
 		885D57701A25159000912290 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885D576F1A25159000912290 /* SystemConfiguration.framework */; };
@@ -51,7 +58,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8823D7AD1A30E3D200271406 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		8823D7B01A30E8B500271406 /* UIViewController+EyeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+EyeType.swift"; sourceTree = "<group>"; };
+		8823D7B21A30F65E00271406 /* BaseMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMenuViewController.swift; sourceTree = "<group>"; };
 		883793181A278BDB00AA856D /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		8856809E1A374B2D005F2BB0 /* fixedMenus.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fixedMenus.plist; sourceTree = "<group>"; };
+		885680A11A374BB8005F2BB0 /* FixedMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedMenuViewController.swift; sourceTree = "<group>"; };
+		885680A31A376E1F005F2BB0 /* SwiftBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftBridge.h; sourceTree = "<group>"; };
+		885680A41A376E47005F2BB0 /* SwiftBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftBridge.m; sourceTree = "<group>"; };
+		885680A61A378E55005F2BB0 /* FixedMenuViewController+Commands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FixedMenuViewController+Commands.swift"; sourceTree = "<group>"; };
 		885ABDE41A13E1DD00552B16 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		885D57601A25062D00912290 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		885D57691A2513FF00912290 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -147,7 +162,12 @@
 				887A2CC91A0BDB4500094E3C /* MainViewController.swift */,
 				88A759A01A2F7B070005B04C /* MainViewModel.swift */,
 				88A759AB1A2F9D4D0005B04C /* EyeControllable.swift */,
+				8823D7B21A30F65E00271406 /* BaseMenuViewController.swift */,
+				885680A11A374BB8005F2BB0 /* FixedMenuViewController.swift */,
+				885680A61A378E55005F2BB0 /* FixedMenuViewController+Commands.swift */,
 				88A759B01A2F9FC10005B04C /* KeyboardViewController.swift */,
+				8823D7AD1A30E3D200271406 /* ConversationViewController.swift */,
+				8823D7B01A30E8B500271406 /* UIViewController+EyeType.swift */,
 				885ABDE41A13E1DD00552B16 /* MyPlayground.playground */,
 				887A2CCB1A0BDB4500094E3C /* Main.storyboard */,
 				887A2CCE1A0BDB4500094E3C /* Images.xcassets */,
@@ -155,6 +175,9 @@
 				887A2CC61A0BDB4500094E3C /* EyeTypeChat.xcdatamodeld */,
 				887A2CC21A0BDB4500094E3C /* Supporting Files */,
 				88C5237B1A12933E005E0D71 /* EyeTypeChat-Bridging-Header.h */,
+				8856809E1A374B2D005F2BB0 /* fixedMenus.plist */,
+				885680A31A376E1F005F2BB0 /* SwiftBridge.h */,
+				885680A41A376E47005F2BB0 /* SwiftBridge.m */,
 			);
 			path = EyeTypeChat;
 			sourceTree = "<group>";
@@ -331,6 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8856809F1A374B2D005F2BB0 /* fixedMenus.plist in Resources */,
 				887A2CCD1A0BDB4500094E3C /* Main.storyboard in Resources */,
 				887A2CD21A0BDB4500094E3C /* LaunchScreen.xib in Resources */,
 				885D57611A25062D00912290 /* Podfile in Resources */,
@@ -385,12 +409,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8823D7AE1A30E3D200271406 /* ConversationViewController.swift in Sources */,
 				887A2CCA1A0BDB4500094E3C /* MainViewController.swift in Sources */,
 				88A759B11A2F9FC10005B04C /* KeyboardViewController.swift in Sources */,
 				887A2CC51A0BDB4500094E3C /* AppDelegate.swift in Sources */,
 				887A2CC81A0BDB4500094E3C /* EyeTypeChat.xcdatamodeld in Sources */,
 				88A759A11A2F7B070005B04C /* MainViewModel.swift in Sources */,
+				8823D7B11A30E8B500271406 /* UIViewController+EyeType.swift in Sources */,
+				885680A21A374BB8005F2BB0 /* FixedMenuViewController.swift in Sources */,
+				885680A51A376E47005F2BB0 /* SwiftBridge.m in Sources */,
 				88A759AC1A2F9D4D0005B04C /* EyeControllable.swift in Sources */,
+				885680A71A378E55005F2BB0 /* FixedMenuViewController+Commands.swift in Sources */,
+				8823D7B31A30F65E00271406 /* BaseMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
