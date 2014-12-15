@@ -9,10 +9,7 @@
 import Foundation
 import CoreData
 
-class Account: NSManagedObject {
+class TelegramAccount: EyeTypeChat.Account {
 
-    @NSManaged var userIdentifier: String
-    @NSManaged var contacts: NSSet?
-    @NSManaged var conversations: NSSet
 
 }

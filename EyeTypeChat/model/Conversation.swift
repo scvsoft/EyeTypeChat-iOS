@@ -1,8 +1,8 @@
 //
-//  Conversation.swift
+//  EyeTypeChat.swift
 //  EyeTypeChat
 //
-//  Created by Maria Ines Casadei on 12/10/14.
+//  Created by Maria Ines Casadei on 12/11/14.
 //  Copyright (c) 2014 SCV Soft. All rights reserved.
 //
 
@@ -12,8 +12,8 @@ import CoreData
 class Conversation: NSManagedObject {
 
     @NSManaged var title: String
-    @NSManaged var messages: NSSet
+    @NSManaged var account: EyeTypeChat.Account
     @NSManaged var betweenContacts: NSSet
-    @NSManaged var account: Account
+    @NSManaged var messages: NSSet
 
 }
