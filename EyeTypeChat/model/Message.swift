@@ -13,7 +13,18 @@ class Message: NSManagedObject {
 
     @NSManaged var sentDateTime: NSDate
     @NSManaged var text: String
-    @NSManaged var conversation: EyeTypeChat.Conversation
-    @NSManaged var fromContact: EyeTypeChat.Contact
+    @NSManaged var conversation: EyeTypeChat.Conversation // TODO: mark as unowned to avoid strong reference cycles
+    @NSManaged var fromContact: EyeTypeChat.Contact? // fromContact is nil when the message was sent by the user himself
 
+    class func createMessage(text: String, sentDateTime: NSDate, conversation: Conversation, fromContact: Contact?, entity: String, context: NSManagedObjectContext) -> Message{
+      
+        var message = NSEntityDescription.insertNewObjectForEntityForName(entity, inManagedObjectContext: context) as Message
+        message.text = text
+        message.sentDateTime = sentDateTime
+        message.conversation = conversation
+        message.fromContact = fromContact;
+        
+        return message
+    }
+    
 }

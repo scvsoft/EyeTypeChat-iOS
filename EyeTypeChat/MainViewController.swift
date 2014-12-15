@@ -69,34 +69,19 @@ class MainViewController: ETVideoSourceViewController {
     func createMockedData(){
         
         // create Telegram account
-        var telegramAccount = NSEntityDescription.insertNewObjectForEntityForName("TelegramAccount", inManagedObjectContext: self.managedObjectContext!) as TelegramAccount
+        var telegramAccount = TelegramAccount.createTelegramAccount("XYZ123", entity: "TelegramAccount", context: self.managedObjectContext!)
         
-        // create contact list for the account
-        var firstContact = NSEntityDescription.insertNewObjectForEntityForName("Contact", inManagedObjectContext: self.managedObjectContext!) as Contact
-        firstContact.name = "Mary"
-        firstContact.phoneNumber = 263823827
-        firstContact.account = telegramAccount
-        
-        var secondContact = NSEntityDescription.insertNewObjectForEntityForName("Contact", inManagedObjectContext: self.managedObjectContext!) as Contact
-        secondContact.name = "Anna"
-        secondContact.phoneNumber = 1161690000
-        secondContact.account = telegramAccount
-        
-        var thirdContact = NSEntityDescription.insertNewObjectForEntityForName("Contact", inManagedObjectContext: self.managedObjectContext!) as Contact
-        thirdContact.name = "John"
-        thirdContact.phoneNumber = 328378738
-        thirdContact.account = telegramAccount
-        
+        // create contact list
+        var firstContact = Contact.createContact("Mary", phoneNumber: 263823827, account: telegramAccount, entity: "Contact", context:  self.managedObjectContext!)
+        var secondContact = Contact.createContact("Anna", phoneNumber: 1161690000, account: telegramAccount, entity: "Contact", context:  self.managedObjectContext!)
+        var thirdContact = Contact.createContact("John", phoneNumber: 328378738, account: telegramAccount, entity: "Contact", context:  self.managedObjectContext!)
         var contactSet = NSMutableSet()
-        contactSet.addObject(firstContact)
-        contactSet.addObject(secondContact)
-        contactSet.addObject(thirdContact)
+        contactSet.addObjectsFromArray([firstContact, secondContact, thirdContact])
         
         //asociate contact list with the Telegram account
         telegramAccount.contacts = contactSet
         
         println(managedObjectContext!)
-        
         printMockedData()
         
     }
@@ -110,7 +95,20 @@ class MainViewController: ETVideoSourceViewController {
                     println("Contact Name: \(eachContact.name). Phone Number: \(eachContact.phoneNumber)")
                 }
             }
+            
+//            let conversations = fetchResults[0].conversations
+//            for chat in conversations! {
+//                if let eachChat = chat as? Conversation {
+//                    println("Chat: \(eachChat.title)")
+//                    for text in eachChat.messages{
+//                        println("\(text)")
+//                        
+//                    }
+//                }
+//            }
         }
+        
+        
     }
     
     @IBAction func eyeDidAccept() {

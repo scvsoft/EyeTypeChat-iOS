@@ -13,6 +13,15 @@ class Contact: NSManagedObject {
 
     @NSManaged var name: String
     @NSManaged var phoneNumber: NSNumber
-    @NSManaged var account: EyeTypeChat.Account
+    @NSManaged var account: EyeTypeChat.Account // TODO: mark as unowned to avoid strong reference cycles
 
+    class func createContact(name: String, phoneNumber: NSNumber, account: Account, entity: String, context: NSManagedObjectContext) -> Contact{
+        
+        var contact = NSEntityDescription.insertNewObjectForEntityForName(entity, inManagedObjectContext: context) as Contact
+        contact.name = name
+        contact.phoneNumber = phoneNumber
+        contact.account = account
+        
+        return contact
+    }
 }

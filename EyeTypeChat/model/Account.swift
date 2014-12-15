@@ -13,6 +13,6 @@ class Account: NSManagedObject {
 
     @NSManaged var userIdentifier: String
     @NSManaged var contacts: NSSet?
-    @NSManaged var conversations: NSSet
+    @NSManaged var conversations: NSSet?
 
 }
