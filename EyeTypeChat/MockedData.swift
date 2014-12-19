@@ -36,6 +36,7 @@ class MockedData {
         var currentDate: NSDate? = NSDate();
         var msg01 = Message.createMessage("Hi Mary!", sentDateTime: currentDate!, conversation: bffConversation, fromContact: nil, entity: "Message", context: dataContext)
         
+        currentDate = MockedData.dateByAddingMinutes(1, date: currentDate)
         var msg02 = Message.createMessage("How are you?", sentDateTime: currentDate!, conversation: bffConversation, fromContact: nil, entity: "Message", context: dataContext)
         
         currentDate = MockedData.dateByAddingMinutes(1, date: currentDate)
@@ -101,6 +102,7 @@ class MockedData {
         if let fetchResults = dataContext.executeFetchRequest(fetchRequest, error: nil) as? [TelegramAccount] {
             
             let contacts = fetchResults[0].contacts
+            println("Contact list")
             for contact in contacts! {
                 if let eachContact = contact as? Contact {
                     println("Contact Name: \(eachContact.name). Phone Number: \(eachContact.phoneNumber)")
@@ -117,12 +119,16 @@ class MockedData {
                     var sortedMsgs : [Message] = msgsArray
                     sortedMsgs.sort({$0.sentDateTime.timeIntervalSinceNow < $1.sentDateTime.timeIntervalSinceNow})
                     
+                    let dateStringFormatter = NSDateFormatter()
+                    dateStringFormatter.dateFormat = "yyyy-MM-dd hh:mm"
+                   
                     for msg in sortedMsgs{
+                        let sentFormattedDate = dateStringFormatter.stringFromDate(msg.sentDateTime)
                         var messageDetails: String
                         if let from = msg.fromContact{
-                           messageDetails = "Message: \(msg.text). From: \(msg.fromContact!.name). Sent:  \(msg.sentDateTime)."
+                           messageDetails = "Message: \(msg.text). From: \(msg.fromContact!.name). Sent:  \(sentFormattedDate)."
                         }else{
-                            messageDetails = "Message: \(msg.text). From: me. Sent:  \(msg.sentDateTime)."
+                            messageDetails = "Message: \(msg.text). From: me. Sent:  \(sentFormattedDate)."
                         }
                         println(messageDetails)
                     }
