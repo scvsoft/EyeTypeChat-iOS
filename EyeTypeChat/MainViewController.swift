@@ -68,7 +68,7 @@ class MainViewController: ETVideoSourceViewController {
     }
     
     func createAndPrintMockedData(){
-        MockedData.createMockedData(managedObjectContext!)
+        var mockedData = MockedData(dataContext: managedObjectContext!)
         MockedData.printMockedData(managedObjectContext!)
     }
 

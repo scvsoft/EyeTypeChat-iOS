@@ -12,7 +12,7 @@ import UIKit
 
 class MockedData {
     
-    class func createMockedData(dataContext: NSManagedObjectContext){
+    init(dataContext: NSManagedObjectContext){
         
         // create Telegram account
         var telegramAccount = TelegramAccount.createTelegramAccount("XYZ123", entity: "TelegramAccount", context: dataContext)
@@ -94,6 +94,24 @@ class MockedData {
    
     class func dateByAddingMinutes(value: Int, date: NSDate?) -> NSDate?{
         return NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.CalendarUnitMinute, value: value, toDate: date!, options: NSCalendarOptions.SearchBackwards)
+    }
+    
+    class func getConversationList(dataContext: NSManagedObjectContext) -> NSSet?{
+        let fetchRequest = NSFetchRequest(entityName: "TelegramAccount")
+        if let fetchResults = dataContext.executeFetchRequest(fetchRequest, error: nil) as? [TelegramAccount] {
+            
+            return fetchResults[0].conversations
+        }
+        return nil
+    }
+    
+    class func getContactList(dataContext: NSManagedObjectContext) -> NSSet?{
+        let fetchRequest = NSFetchRequest(entityName: "TelegramAccount")
+        if let fetchResults = dataContext.executeFetchRequest(fetchRequest, error: nil) as? [TelegramAccount] {
+            
+            return fetchResults[0].contacts
+        }
+        return nil
     }
     
     class func printMockedData(dataContext: NSManagedObjectContext){

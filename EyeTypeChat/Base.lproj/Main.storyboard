@@ -212,10 +212,10 @@
             </objects>
             <point key="canvasLocation" x="189" y="900"/>
         </scene>
-        <!--Fixed Menu View Controller-->
+        <!--Conversation View Controller-->
         <scene sceneID="9c2-UI-FUL">
             <objects>
-                <tableViewController id="pxJ-sq-pWH" customClass="FixedMenuViewController" customModule="EyeTypeChat" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="pxJ-sq-pWH" customClass="ConversationViewController" customModule="EyeTypeChat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1NT-JY-mos">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -226,9 +226,6 @@
                             <outlet property="delegate" destination="pxJ-sq-pWH" id="mHf-gt-MBw"/>
                         </connections>
                     </tableView>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="menuName" value="conversation"/>
-                    </userDefinedRuntimeAttributes>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wd3-A7-SHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -1,5 +1,5 @@
 //
-//  FixedMenuViewController+Commands.swift
+//  ConversationViewController+Commands.swift
 //  EyeTypeChat
 //
 //  Created by Emanuel Andrada on 9/12/14.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension FixedMenuViewController {
+extension ConversationViewController {
 
     func showKeyboard() {
         let viewController = self.storyboard!.instantiateViewControllerWithIdentifier("keyboard") as UIViewController!
