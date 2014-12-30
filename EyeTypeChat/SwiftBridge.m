@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-void performSelectorInObject(id target, SEL selector) {
+void performSelectorInObject(id target, SEL selector, id object) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-    [target performSelector:selector];
+    [target performSelector:selector withObject:(id)object];
 #pragma clang diagnostic pop
 }

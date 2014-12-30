@@ -10,8 +10,9 @@ import Foundation
 
 extension ConversationViewController {
 
-    func showKeyboard() {
-        let viewController = self.storyboard!.instantiateViewControllerWithIdentifier("keyboard") as UIViewController!
+    func showKeyboardForConversation(conversation: Conversation) {
+        let viewController: KeyboardViewController = self.storyboard!.instantiateViewControllerWithIdentifier("keyboard") as KeyboardViewController!
+        viewController.selectedConversation = conversation
         self.navigationController!.pushViewController(viewController, animated: true)
     }
 }

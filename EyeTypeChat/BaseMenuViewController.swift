@@ -34,6 +34,14 @@ class BaseMenuViewController: UITableViewController, EyeControllable {
         return cell!
     }
 
+    func chatCell() -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as UITableViewCell?
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: CellIdentifier)
+        }
+        return cell!
+    }
+    
     func validRow(indexPath: NSIndexPath) -> NSIndexPath {
         if (indexPath.section >= numberOfSectionsInTableView(tableView)) {
             return NSIndexPath(forRow: 0, inSection: 0)

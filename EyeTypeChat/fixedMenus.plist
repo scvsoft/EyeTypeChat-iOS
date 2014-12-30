@@ -8,7 +8,7 @@
 			<key>title</key>
 			<string>Respond</string>
 			<key>selector</key>
-			<string>showKeyboard</string>
+			<string>showKeyboardForConversation:</string>
 		</dict>
 	</array>
 </dict>

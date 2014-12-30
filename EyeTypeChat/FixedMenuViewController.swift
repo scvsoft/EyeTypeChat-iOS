@@ -60,7 +60,7 @@ class FixedMenuViewController: BaseMenuViewController {
             eyeDidCancel()
         }
         else {
-            performSelectorInObject(self, menuItems[indexPath.row].selector)
+            performSelectorInObject(self, menuItems[indexPath.row].selector, nil)
         }
     }
 

@@ -15,7 +15,7 @@ class MockedData {
     init(dataContext: NSManagedObjectContext){
         
         // create Telegram account
-        var telegramAccount = TelegramAccount.createTelegramAccount("XYZ123", entity: "TelegramAccount", context: dataContext)
+        var telegramAccount = TelegramAccount.createTelegramAccount("Me", entity: "TelegramAccount", context: dataContext)
         
         // create contact list
         var contactSet = NSMutableSet()
@@ -92,6 +92,16 @@ class MockedData {
 
     }
    
+    
+    class func getUserIdentifier(dataContext: NSManagedObjectContext) -> String?{
+        let fetchRequest = NSFetchRequest(entityName: "TelegramAccount")
+        if let fetchResults = dataContext.executeFetchRequest(fetchRequest, error: nil) as? [TelegramAccount] {
+            
+            return fetchResults[0].userIdentifier
+        }
+        return nil
+    }
+    
     class func dateByAddingMinutes(value: Int, date: NSDate?) -> NSDate?{
         return NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.CalendarUnitMinute, value: value, toDate: date!, options: NSCalendarOptions.SearchBackwards)
     }
@@ -101,6 +111,23 @@ class MockedData {
         if let fetchResults = dataContext.executeFetchRequest(fetchRequest, error: nil) as? [TelegramAccount] {
             
             return fetchResults[0].conversations
+        }
+        return nil
+    }
+    
+    class func getMessages(dataContext: NSManagedObjectContext, forConversation chat: Conversation?) -> NSArray?{
+       
+        let fetchRequest = NSFetchRequest(entityName: "TelegramAccount")
+        if let fetchResults = dataContext.executeFetchRequest(fetchRequest, error: nil) as? [TelegramAccount] {
+            
+                println("Chat: \(chat?.title)")
+                let messages = chat?.messages
+                var msgsArray = messages?.allObjects as [Message]
+                
+                var sortedMsgs : [Message] = msgsArray
+                sortedMsgs.sort({$0.sentDateTime.timeIntervalSinceNow < $1.sentDateTime.timeIntervalSinceNow})
+                
+                return sortedMsgs
         }
         return nil
     }
@@ -137,17 +164,16 @@ class MockedData {
                     var sortedMsgs : [Message] = msgsArray
                     sortedMsgs.sort({$0.sentDateTime.timeIntervalSinceNow < $1.sentDateTime.timeIntervalSinceNow})
                     
-                    let dateStringFormatter = NSDateFormatter()
-                    dateStringFormatter.dateFormat = "yyyy-MM-dd hh:mm"
-                   
+                    
                     for msg in sortedMsgs{
-                        let sentFormattedDate = dateStringFormatter.stringFromDate(msg.sentDateTime)
+                        let sentFormattedDate = MockedData.getFormattedDate(msg.sentDateTime)
                         var messageDetails: String
                         if let from = msg.fromContact{
                            messageDetails = "Message: \(msg.text). From: \(msg.fromContact!.name). Sent:  \(sentFormattedDate)."
                         }else{
-                            messageDetails = "Message: \(msg.text). From: me. Sent:  \(sentFormattedDate)."
+                            messageDetails = "Message: \(msg.text). From: \(MockedData.getUserIdentifier(dataContext)!) Sent:  \(sentFormattedDate)."
                         }
+                      
                         println(messageDetails)
                     }
                     
@@ -158,6 +184,11 @@ class MockedData {
         
     }
     
+    class func getFormattedDate(dateTime: NSDate)-> String{
+        let dateStringFormatter = NSDateFormatter()
+        dateStringFormatter.dateFormat = "hh:mm"// MM-dd-yyyy
+        return dateStringFormatter.stringFromDate(dateTime)
+    }
    
     
 }

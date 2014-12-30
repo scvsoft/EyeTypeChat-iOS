@@ -65,17 +65,19 @@ class ConversationViewController: BaseMenuViewController {
             eyeDidCancel()
         }
         else {
-            performSelectorInObject(self, conversationItems[indexPath.row].selector)
+            performSelectorInObject(self, conversationItems[indexPath.row].selector, conversationItems[indexPath.row].conversation)
         }
     }
     
     class ConversationItem {
         var title: String
         var selector: Selector
+        var conversation: Conversation
         
         init (item: Conversation) {
             title = item.title
-            selector = Selector("showKeyboard")
+            selector = Selector("showKeyboardForConversation:")
+            conversation = item
         }
     }
     

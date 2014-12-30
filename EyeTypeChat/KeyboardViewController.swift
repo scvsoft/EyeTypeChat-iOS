@@ -14,16 +14,18 @@ class KeyboardViewController: UIViewController, EyeControllable {
     @IBOutlet var cancelButton: UIButton!
     var keyButtons = [[UIButton]]()
     var selectedButton: UIButton?
+    var selectedConversation: Conversation?
+    lazy var chatModel: ChatViewModel = ChatViewModel(currentConversation: self.selectedConversation!)
     let margin: CGFloat = 8
 
     var keys = [
-        ["A", "b", "c", "d", "1", "2"],
-        ["E", "f", "g", "h", "3", "4"],
-        ["I", "j", "k", "l", "m", "n"],
-        ["O", "p", "q", "r", "s", "t"],
-        ["U", "v", "w", "x", "y", "z"],
+        ["a", "b", "c", "d", "1", "2"],
+        ["e", "f", "g", "h", "3", "4"],
+        ["i", "j", "k", "l", "m", "n"],
+        ["o", "p", "q", "r", "s", "t"],
+        ["u", "v", "w", "x", "y", "z"],
         ["5", "6", "7", "8", "9", "0"],
-        ["space", "comma", "point"]
+        ["space", "comma", "point", "send"]
     ]
     var showCancel = false
     var currentLine = 0
@@ -32,6 +34,7 @@ class KeyboardViewController: UIViewController, EyeControllable {
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        selectedConversation = nil
     }
 
     override func viewDidLoad() {
@@ -39,6 +42,7 @@ class KeyboardViewController: UIViewController, EyeControllable {
         createKeyboard()
     }
 
+    
     func createKeyboard() {
         self.keyboardContainer.removeConstraints(self.keyboardContainer.constraints())
         var i = 0
@@ -92,7 +96,38 @@ class KeyboardViewController: UIViewController, EyeControllable {
         }
         selectedButton!.selected = true
     }
+    
+    func updateWritingText(letter:String) {
+        var newText:String =  chatModel.currentWritingText + letter
+        chatModel.currentWritingText = newText
+        NSLog("Text: '%@'", chatModel.currentWritingText)
+    }
 
+    func sendWrittenText() {
+        //TODO: display written text as a row
+        chatModel.currentMessageStatus = ChatViewModel.MessageStatus.InProgress
+        NSLog("Message: '%@'", chatModel.currentWritingText)
+    }
+    
+    func clearWrittenText() {
+        chatModel.clearWrittenText()
+    }
+    
+    func executeActionAccordingToKeySelection(key: String){
+        switch key{
+            case "send":
+                sendWrittenText()
+            case "point":
+                updateWritingText(".")
+            case "comma":
+                updateWritingText(",")
+            case "space":
+                updateWritingText(" ")
+            default:
+                updateWritingText(key)
+            
+        }
+    }
 // MARK: EyeControllable
 
     func eyeDidAccept() {
@@ -101,11 +136,13 @@ class KeyboardViewController: UIViewController, EyeControllable {
                 eyeDidCancel()
             }
             else {
-                NSLog("key '%@'", selectedButton!.titleForState(UIControlState.Normal)!)
+                let keySelection = selectedButton!.titleForState(UIControlState.Normal)!
+                NSLog("key '%@'", keySelection)
                 currentLine = 0
                 currentRow = 0
                 lineSelected = false
                 updateSelection()
+                executeActionAccordingToKeySelection(keySelection)
             }
         }
         else {

@@ -8,4 +8,5 @@
 
 #import <Foundation/Foundation.h>
 
-void performSelectorInObject(id target, SEL selector);
+void performSelectorInObject(id target, SEL selector, id object);
+
