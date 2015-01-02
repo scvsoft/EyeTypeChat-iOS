@@ -140,10 +140,10 @@
             </objects>
             <point key="canvasLocation" x="189" y="165"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="SP6-8M-JJ2">
             <objects>
-                <tableViewController id="0ko-00-bdu" customClass="ChatViewController" customModule="EyeTypeChat" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="chat" id="0ko-00-bdu" customClass="ChatViewController" customModule="EyeTypeChat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="UCJ-dq-pp7">
                         <rect key="frame" x="0.0" y="0.0" width="248" height="461"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -171,7 +171,10 @@
                             </textField>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="q24-6Z-fWb"/>
+                    <navigationItem key="navigationItem" title="Chat View Controller" id="q24-6Z-fWb"/>
+                    <connections>
+                        <outlet property="writingTextField" destination="kxv-ny-iaq" id="UJ7-RI-j2e"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdp-vI-Qei" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

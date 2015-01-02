@@ -12,6 +12,7 @@ class KeyboardViewController: UIViewController, EyeControllable {
 
     @IBOutlet var keyboardContainer: UIView!
     @IBOutlet var cancelButton: UIButton!
+    var chatControllable:ChatControllable! = nil
     var keyButtons = [[UIButton]]()
     var selectedButton: UIButton?
     var selectedConversation: Conversation?
@@ -101,12 +102,13 @@ class KeyboardViewController: UIViewController, EyeControllable {
         var newText:String =  chatModel.currentWritingText + letter
         chatModel.currentWritingText = newText
         NSLog("Text: '%@'", chatModel.currentWritingText)
+//        chatControllable.chatDidType()
     }
 
     func sendWrittenText() {
         //TODO: display written text as a row
-        chatModel.currentMessageStatus = ChatViewModel.MessageStatus.InProgress
         NSLog("Message: '%@'", chatModel.currentWritingText)
+//        chatControllable.chatDidSend()
     }
     
     func clearWrittenText() {

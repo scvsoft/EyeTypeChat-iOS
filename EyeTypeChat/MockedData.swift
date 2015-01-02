@@ -115,7 +115,7 @@ class MockedData {
         return nil
     }
     
-    class func getMessages(dataContext: NSManagedObjectContext, forConversation chat: Conversation?) -> NSArray?{
+    class func getOrderedMessages(dataContext: NSManagedObjectContext, forConversation chat: Conversation?) -> NSArray?{
        
         let fetchRequest = NSFetchRequest(entityName: "TelegramAccount")
         if let fetchResults = dataContext.executeFetchRequest(fetchRequest, error: nil) as? [TelegramAccount] {
@@ -131,14 +131,14 @@ class MockedData {
         }
         return nil
     }
+
     
-    class func getContactList(dataContext: NSManagedObjectContext) -> NSSet?{
-        let fetchRequest = NSFetchRequest(entityName: "TelegramAccount")
-        if let fetchResults = dataContext.executeFetchRequest(fetchRequest, error: nil) as? [TelegramAccount] {
-            
-            return fetchResults[0].contacts
-        }
-        return nil
+    
+    class func addNewMessage(dataContext: NSManagedObjectContext, message: String, conversation: Conversation){
+        var currentDate: NSDate? = NSDate();
+        var msg = Message.createMessage(message, sentDateTime: currentDate!, conversation: conversation, fromContact: nil, entity: "Message", context: dataContext)
+        
+        
     }
     
     class func printMockedData(dataContext: NSManagedObjectContext){

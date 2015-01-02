@@ -11,28 +11,10 @@ import Foundation
 class ChatViewModel {
 
     var currentConversation: Conversation
-    var currentMessageStatus: MessageStatus
-    var currentWritingText: String {
-        get {
-            return self.currentWritingText
-        }
-        set(text) {
-            if(self.currentMessageStatus==MessageStatus.InProgress){
-                return
-            }
-            if(text.isEmpty){
-                self.currentMessageStatus = MessageStatus.Empty
-            }
-            else{
-               self.currentMessageStatus = MessageStatus.Ok
-            }
-            self.currentWritingText = text
-        }
-    }
+    var currentWritingText: String
     
     init(currentConversation conversation: Conversation){
         self.currentConversation = conversation
-        self.currentMessageStatus = MessageStatus.Empty
         self.currentWritingText = ""
     }
     
@@ -40,8 +22,5 @@ class ChatViewModel {
         currentWritingText = ""
     }
     
-    enum MessageStatus {
-        case Empty, Ok, InProgress, Created
-    }
     
 }

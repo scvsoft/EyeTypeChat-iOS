@@ -14,6 +14,7 @@
 		232CE53A1A3A3E9C00C94EE8 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232CE5391A3A3E9C00C94EE8 /* Contact.swift */; };
 		2333C0A21A51A0F900784BEA /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2333C0A11A51A0F900784BEA /* ChatViewModel.swift */; };
 		236ACA281A44B8B2003D1F53 /* EyeControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A759AB1A2F9D4D0005B04C /* EyeControllable.swift */; };
+		237E24601A56E4E90031B30A /* ChatControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237E245F1A56E4E90031B30A /* ChatControllable.swift */; };
 		23C120CE1A4340F8004D7B5E /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C120CD1A4340F8004D7B5E /* MockedData.swift */; };
 		23FAF5451A52EDED00ADD423 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FAF5441A52EDED00ADD423 /* ChatViewController.swift */; };
 		5E9B341BA996967017148759 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A49492BC4CA902EDA58BC35 /* libPods.a */; };
@@ -72,6 +73,7 @@
 		232CE5371A3A3E4D00C94EE8 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = model/Message.swift; sourceTree = "<group>"; };
 		232CE5391A3A3E9C00C94EE8 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = model/Contact.swift; sourceTree = "<group>"; };
 		2333C0A11A51A0F900784BEA /* ChatViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		237E245F1A56E4E90031B30A /* ChatControllable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatControllable.swift; sourceTree = "<group>"; };
 		23C120CD1A4340F8004D7B5E /* MockedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
 		23FAF5441A52EDED00ADD423 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		8823D7AD1A30E3D200271406 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				887A2CC41A0BDB4500094E3C /* AppDelegate.swift */,
 				23C120CD1A4340F8004D7B5E /* MockedData.swift */,
 				88A759AB1A2F9D4D0005B04C /* EyeControllable.swift */,
+				237E245F1A56E4E90031B30A /* ChatControllable.swift */,
 				8856809E1A374B2D005F2BB0 /* fixedMenus.plist */,
 				887A2CCB1A0BDB4500094E3C /* Main.storyboard */,
 				887A2CCE1A0BDB4500094E3C /* Images.xcassets */,
@@ -464,6 +467,7 @@
 				887A2CCA1A0BDB4500094E3C /* MainViewController.swift in Sources */,
 				232CE53A1A3A3E9C00C94EE8 /* Contact.swift in Sources */,
 				232CE5341A3A3D9300C94EE8 /* TelegramAccount.swift in Sources */,
+				237E24601A56E4E90031B30A /* ChatControllable.swift in Sources */,
 				88A759B11A2F9FC10005B04C /* KeyboardViewController.swift in Sources */,
 				887A2CC51A0BDB4500094E3C /* AppDelegate.swift in Sources */,
 				887A2CC81A0BDB4500094E3C /* EyeTypeChat.xcdatamodeld in Sources */,

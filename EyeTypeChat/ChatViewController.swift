@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 import CoreData
 
-class ChatViewController: BaseMenuViewController {
+class ChatViewController: BaseMenuViewController, ChatControllable {
+    
+    @IBOutlet weak var writingTextField: UITextField!
     
     lazy var managedObjectContext : NSManagedObjectContext? = {
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
@@ -45,12 +47,27 @@ class ChatViewController: BaseMenuViewController {
     
     func loadMessagesItems(forChat chat: Conversation) {
         // load dynamically the mocked conversations
-        let messages = MockedData.getMessages(managedObjectContext!, forConversation: chat)
+        let messages = MockedData.getOrderedMessages(managedObjectContext!, forConversation: chat)
         for item in messages! {
             let chatItem = MessageItem(item: item as Message)
             messageItems.append(chatItem)
         }
     }
+    
+    func addNewMessage(){
+        MockedData.addNewMessage(managedObjectContext!, message: self.writingTextField.text, conversation: self.chatModel.currentConversation)
+    }
+    
+    class MessageItem {
+        
+        var message: Message
+        
+        init (item: Message) {
+            message = item
+        }
+    }
+    
+    // MARK: UITableViewController
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -82,13 +99,16 @@ class ChatViewController: BaseMenuViewController {
         // Do nothing
     }
     
-    class MessageItem {
-        
-        var message: Message
-        
-        init (item: Message) {
-            message = item
-        }
+    
+    // MARK: ChatControllable
+    
+    func chatDidType() {
+        writingTextField.text = chatModel.currentWritingText
+    }
+    
+    func chatDidSend() {
+        addNewMessage()
+        loadMessagesItems(forChat: self.selectedConversation!)
     }
     
 }
