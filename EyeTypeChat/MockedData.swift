@@ -106,13 +106,13 @@ class MockedData {
         return NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.CalendarUnitMinute, value: value, toDate: date!, options: NSCalendarOptions.SearchBackwards)
     }
     
-    class func getConversationList(dataContext: NSManagedObjectContext) -> NSSet?{
+    class func getConversationList(dataContext: NSManagedObjectContext) -> [Conversation]{
         let fetchRequest = NSFetchRequest(entityName: "TelegramAccount")
         if let fetchResults = dataContext.executeFetchRequest(fetchRequest, error: nil) as? [TelegramAccount] {
-            
-            return fetchResults[0].conversations
+            // TODO: order by date
+            return fetchResults[0].conversations!.allObjects as [Conversation]
         }
-        return nil
+        return []
     }
     
     class func getOrderedMessages(dataContext: NSManagedObjectContext, forConversation chat: Conversation?) -> NSArray?{

@@ -93,7 +93,7 @@
                                 <rect key="frame" x="336" y="0.0" width="248" height="461"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="hS7-NC-uMY" kind="embed" identifier="conversation" id="Cvj-za-k4H"/>
+                                    <segue destination="hS7-NC-uMY" kind="embed" identifier="chatSegue" id="Cvj-za-k4H"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -325,6 +325,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72a-ej-5FC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1351.5" y="900"/>
+        </scene>
+        <!--Fixed Menu View Controller-->
+        <scene sceneID="znU-sN-Y7a">
+            <objects>
+                <viewController storyboardIdentifier="fixedMenu" id="yO6-cL-ohg" customClass="FixedMenuViewController" customModule="EyeTypeChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="WH8-7c-Awc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="HD9-aw-wdz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Vu-Xi-v3D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1996" y="900"/>
         </scene>
     </scenes>
 </document>

@@ -22,7 +22,7 @@ class ConversationViewController: BaseMenuViewController {
         }
         }()
     
-    var conversationItems = [ConversationItem]()
+    var conversationItems = [Conversation]()
     
     override func viewDidLoad() {
         loadConversationItems()
@@ -31,11 +31,8 @@ class ConversationViewController: BaseMenuViewController {
     
     func loadConversationItems() {
         // load dynamically the mocked conversations
-        let conversations = MockedData.getConversationList(managedObjectContext!)
-        for item in conversations! {
-            let chatItem = ConversationItem(item: item as Conversation)
-            conversationItems.append(chatItem)
-        }
+        conversationItems = MockedData.getConversationList(managedObjectContext!)
+        
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -65,20 +62,12 @@ class ConversationViewController: BaseMenuViewController {
             eyeDidCancel()
         }
         else {
-            performSelectorInObject(self, conversationItems[indexPath.row].selectorForKeyboard, conversationItems[indexPath.row].conversation)
+            self.mainViewController?.selectConversation(conversationItems[indexPath.row])
+            let vc = storyboard!.instantiateViewControllerWithIdentifier("fixedMenu") as FixedMenuViewController
+            vc.menuName = "conversation"
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
     
-    class ConversationItem {
-        var title: String
-        var selectorForKeyboard: Selector
-        var conversation: Conversation
-        
-        init (item: Conversation) {
-            title = item.title
-            selectorForKeyboard = Selector("showKeyboardForConversation:")
-            conversation = item
-        }
-    }
-    
+
 }

@@ -13,7 +13,7 @@ class MainViewController: ETVideoSourceViewController {
 
     var timer: NSTimer?
     var subNavigationController: UINavigationController!
-    var conversationNavigationController: UINavigationController!
+    var chatNavigationController: UINavigationController!
     var ignoreNextTick = false
     
     lazy var managedObjectContext : NSManagedObjectContext? = {
@@ -96,14 +96,20 @@ class MainViewController: ETVideoSourceViewController {
         else {
             ignoreNextTick = false
         }
+        
     }
 
+    func selectConversation(chat: Conversation){
+        let c = self.chatNavigationController.topViewController as ChatViewController
+        c.loadMessagesItems(forChat: chat)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "subNavigationController") {
             subNavigationController = segue.destinationViewController as UINavigationController
         }
-        else if (segue.identifier == "conversation") {
-            conversationNavigationController = segue.destinationViewController as UINavigationController
+        else if (segue.identifier == "chatSegue") {
+            chatNavigationController = segue.destinationViewController as UINavigationController
         }
     }
 

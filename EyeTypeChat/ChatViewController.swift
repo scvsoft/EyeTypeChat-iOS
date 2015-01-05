@@ -33,12 +33,9 @@ class ChatViewController: BaseMenuViewController, ChatControllable {
     
     override func viewDidLoad() {
         
-        let conversationList: NSSet? = MockedData.getConversationList(managedObjectContext!)
+        let conversationList = MockedData.getConversationList(managedObjectContext!)
         var chatItem: Conversation? = nil
-        for item in conversationList! {
-            chatItem = item as? Conversation
-            break
-        }
+        chatItem = conversationList[0]
         self.selectedConversation = chatItem
         self.navigationItem.title = chatItem?.title
         loadMessagesItems(forChat: self.selectedConversation!)
@@ -52,6 +49,7 @@ class ChatViewController: BaseMenuViewController, ChatControllable {
             let chatItem = MessageItem(item: item as Message)
             messageItems.append(chatItem)
         }
+        self.tableView.reloadData()
     }
     
     func addNewMessage(){

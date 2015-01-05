@@ -8,11 +8,10 @@
 
 import Foundation
 
-extension ConversationViewController {
+extension BaseMenuViewController {
 
-    func showKeyboardForConversation(conversation: Conversation) {
+    func showKeyboard() {
         let viewController: KeyboardViewController = self.storyboard!.instantiateViewControllerWithIdentifier("keyboard") as KeyboardViewController!
-        viewController.selectedConversation = conversation
         self.navigationController!.pushViewController(viewController, animated: true)
     }
 
