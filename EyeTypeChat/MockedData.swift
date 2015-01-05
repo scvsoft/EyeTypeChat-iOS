@@ -34,21 +34,22 @@ class MockedData {
         
         // create some messages for bff chat
         var currentDate: NSDate? = NSDate();
+        currentDate = MockedData.dateByAddingMinutes(-30, date: currentDate)
         var msg01 = Message.createMessage("Hi Mary!", sentDateTime: currentDate!, conversation: bffConversation, fromContact: nil, entity: "Message", context: dataContext)
         
         currentDate = MockedData.dateByAddingMinutes(1, date: currentDate)
         var msg02 = Message.createMessage("How are you?", sentDateTime: currentDate!, conversation: bffConversation, fromContact: nil, entity: "Message", context: dataContext)
         
-        currentDate = MockedData.dateByAddingMinutes(1, date: currentDate)
+        currentDate = MockedData.dateByAddingMinutes(2, date: currentDate)
         var msg03 = Message.createMessage("Great! and u?", sentDateTime: currentDate!, conversation: bffConversation, fromContact: firstContact, entity: "Message", context: dataContext)
         
-        currentDate = MockedData.dateByAddingMinutes(2, date: currentDate)
+        currentDate = MockedData.dateByAddingMinutes(1, date: currentDate)
         var msg04 = Message.createMessage("How was San Francisco?", sentDateTime: currentDate!, conversation: bffConversation, fromContact: firstContact, entity: "Message", context: dataContext)
 
         currentDate = MockedData.dateByAddingMinutes(1, date: currentDate)
         var msg05 = Message.createMessage("Fantastic! See u tomorrow?", sentDateTime: currentDate!, conversation: bffConversation, fromContact: nil, entity: "Message", context:dataContext)
         
-        currentDate = MockedData.dateByAddingMinutes(3, date: currentDate)
+        currentDate = MockedData.dateByAddingMinutes(2, date: currentDate)
         var msg06 = Message.createMessage("Sure :)", sentDateTime: currentDate!, conversation: bffConversation, fromContact: firstContact, entity: "Message", context: dataContext)
         
         var messages = NSMutableSet()
@@ -62,12 +63,13 @@ class MockedData {
         var groupConversation = Conversation.createConversation("Trip to NY", account: telegramAccount, betweenContacts: contactsInGroupChat, messages: nil, entity: "Conversation", context: dataContext)
         
         // create some messages for group chat
+        currentDate = MockedData.dateByAddingMinutes(-15, date: NSDate())
         var msg11 = Message.createMessage("Hello everyone!", sentDateTime: currentDate!, conversation: bffConversation, fromContact: secondContact, entity: "Message", context: dataContext)
         
         currentDate = MockedData.dateByAddingMinutes(1, date: currentDate)
         var msg12 = Message.createMessage("Hi!", sentDateTime: currentDate!, conversation: groupConversation, fromContact: nil, entity: "Message", context: dataContext)
         
-        currentDate = MockedData.dateByAddingMinutes(1, date: currentDate)
+        currentDate = MockedData.dateByAddingMinutes(0, date: currentDate)
         var msg13 = Message.createMessage("Any news from Tom?", sentDateTime: currentDate!, conversation: groupConversation, fromContact: secondContact, entity: "Message", context: dataContext)
         
         currentDate = MockedData.dateByAddingMinutes(2, date: currentDate)
@@ -76,7 +78,7 @@ class MockedData {
         currentDate = MockedData.dateByAddingMinutes(1, date: currentDate)
         var msg15 = Message.createMessage("January 16th?", sentDateTime: currentDate!, conversation: groupConversation, fromContact: nil, entity: "Message", context:dataContext)
         
-        currentDate = MockedData.dateByAddingMinutes(3, date: currentDate)
+        currentDate = MockedData.dateByAddingMinutes(1, date: currentDate)
         var msg16 = Message.createMessage("Right", sentDateTime: currentDate!, conversation: groupConversation, fromContact: secondContact, entity: "Message", context: dataContext)
         
         var groupMessages = NSMutableSet()

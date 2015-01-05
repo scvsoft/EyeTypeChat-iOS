@@ -12,6 +12,7 @@ extension BaseMenuViewController {
 
     func showKeyboard() {
         let viewController: KeyboardViewController = self.storyboard!.instantiateViewControllerWithIdentifier("keyboard") as KeyboardViewController!
+        viewController.chatControllable = mainViewController?
         self.navigationController!.pushViewController(viewController, animated: true)
     }
 

@@ -18,7 +18,7 @@
 		23C120CE1A4340F8004D7B5E /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C120CD1A4340F8004D7B5E /* MockedData.swift */; };
 		23FAF5451A52EDED00ADD423 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FAF5441A52EDED00ADD423 /* ChatViewController.swift */; };
 		5E9B341BA996967017148759 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A49492BC4CA902EDA58BC35 /* libPods.a */; };
-		8823D7AE1A30E3D200271406 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8823D7AD1A30E3D200271406 /* ConversationViewController.swift */; };
+		8823D7AE1A30E3D200271406 /* ConversationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8823D7AD1A30E3D200271406 /* ConversationListViewController.swift */; };
 		8823D7B11A30E8B500271406 /* UIViewController+EyeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8823D7B01A30E8B500271406 /* UIViewController+EyeType.swift */; };
 		8823D7B31A30F65E00271406 /* BaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8823D7B21A30F65E00271406 /* BaseMenuViewController.swift */; };
 		8856809F1A374B2D005F2BB0 /* fixedMenus.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8856809E1A374B2D005F2BB0 /* fixedMenus.plist */; };
@@ -76,7 +76,7 @@
 		237E245F1A56E4E90031B30A /* ChatControllable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatControllable.swift; sourceTree = "<group>"; };
 		23C120CD1A4340F8004D7B5E /* MockedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
 		23FAF5441A52EDED00ADD423 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		8823D7AD1A30E3D200271406 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		8823D7AD1A30E3D200271406 /* ConversationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationListViewController.swift; sourceTree = "<group>"; };
 		8823D7B01A30E8B500271406 /* UIViewController+EyeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+EyeType.swift"; sourceTree = "<group>"; };
 		8823D7B21A30F65E00271406 /* BaseMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMenuViewController.swift; sourceTree = "<group>"; };
 		883793181A278BDB00AA856D /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
@@ -169,7 +169,7 @@
 				885680A11A374BB8005F2BB0 /* FixedMenuViewController.swift */,
 				885680A61A378E55005F2BB0 /* BaseMenuViewController+Commands.swift */,
 				88A759B01A2F9FC10005B04C /* KeyboardViewController.swift */,
-				8823D7AD1A30E3D200271406 /* ConversationViewController.swift */,
+				8823D7AD1A30E3D200271406 /* ConversationListViewController.swift */,
 				8823D7B01A30E8B500271406 /* UIViewController+EyeType.swift */,
 				23FAF5441A52EDED00ADD423 /* ChatViewController.swift */,
 			);
@@ -461,7 +461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				236ACA281A44B8B2003D1F53 /* EyeControllable.swift in Sources */,
-				8823D7AE1A30E3D200271406 /* ConversationViewController.swift in Sources */,
+				8823D7AE1A30E3D200271406 /* ConversationListViewController.swift in Sources */,
 				2333C0A21A51A0F900784BEA /* ChatViewModel.swift in Sources */,
 				232CE5361A3A3DCF00C94EE8 /* Conversation.swift in Sources */,
 				887A2CCA1A0BDB4500094E3C /* MainViewController.swift in Sources */,

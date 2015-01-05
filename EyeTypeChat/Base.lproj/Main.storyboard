@@ -215,10 +215,10 @@
             </objects>
             <point key="canvasLocation" x="189" y="900"/>
         </scene>
-        <!--Conversation View Controller-->
+        <!--Conversation List View Controller-->
         <scene sceneID="9c2-UI-FUL">
             <objects>
-                <tableViewController id="pxJ-sq-pWH" customClass="ConversationViewController" customModule="EyeTypeChat" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="pxJ-sq-pWH" customClass="ConversationListViewController" customModule="EyeTypeChat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1NT-JY-mos">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

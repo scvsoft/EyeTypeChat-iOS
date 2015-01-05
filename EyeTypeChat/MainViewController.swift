@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class MainViewController: ETVideoSourceViewController {
+class MainViewController: ETVideoSourceViewController , ChatControllable {
 
     var timer: NSTimer?
     var subNavigationController: UINavigationController!
@@ -117,6 +117,23 @@ class MainViewController: ETVideoSourceViewController {
         get {
             return self
         }
+    }
+    
+    // MARK: ChatControllable
+    
+    func chatDidType(letter: String) {
+        let c = self.chatNavigationController.topViewController as ChatViewController
+        c.type(letter)
+    }
+    
+    func chatDidSend() {
+        let c = self.chatNavigationController.topViewController as ChatViewController
+        c.sendMessage()
+    }
+    
+    func chatDidClearAll() {
+        let c = self.chatNavigationController.topViewController as ChatViewController
+        c.clearCurrentText()
     }
 
 }

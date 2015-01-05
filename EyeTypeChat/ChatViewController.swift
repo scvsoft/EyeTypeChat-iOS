@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class ChatViewController: BaseMenuViewController, ChatControllable {
+class ChatViewController: BaseMenuViewController {
     
     @IBOutlet weak var writingTextField: UITextField!
     
@@ -32,7 +32,6 @@ class ChatViewController: BaseMenuViewController, ChatControllable {
     
     
     override func viewDidLoad() {
-        
         let conversationList = MockedData.getConversationList(managedObjectContext!)
         var chatItem: Conversation? = nil
         chatItem = conversationList[0]
@@ -43,6 +42,9 @@ class ChatViewController: BaseMenuViewController, ChatControllable {
     }
     
     func loadMessagesItems(forChat chat: Conversation) {
+        messageItems.removeAll(keepCapacity: true)
+        chatModel = ChatViewModel(currentConversation: chat)
+        self.selectedConversation = chatModel.currentConversation
         // load dynamically the mocked conversations
         let messages = MockedData.getOrderedMessages(managedObjectContext!, forConversation: chat)
         for item in messages! {
@@ -98,15 +100,23 @@ class ChatViewController: BaseMenuViewController, ChatControllable {
     }
     
     
-    // MARK: ChatControllable
+    // MARK: Chat
     
-    func chatDidType() {
+    func type(letter: String) {
+        chatModel.currentWritingText = chatModel.currentWritingText + letter
         writingTextField.text = chatModel.currentWritingText
     }
     
-    func chatDidSend() {
+    func sendMessage() {
         addNewMessage()
         loadMessagesItems(forChat: self.selectedConversation!)
+        clearCurrentText()
     }
+    
+    func clearCurrentText(){
+        chatModel.currentWritingText = ""
+        writingTextField.text = chatModel.currentWritingText
+    }
+    
     
 }

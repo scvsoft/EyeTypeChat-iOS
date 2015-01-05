@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import CoreData
 
-class ConversationViewController: BaseMenuViewController {
+class ConversationListViewController: BaseMenuViewController {
     
     lazy var managedObjectContext : NSManagedObjectContext? = {
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate

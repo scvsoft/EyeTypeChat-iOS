@@ -11,7 +11,8 @@ import Foundation
 @objc
 protocol ChatControllable {
     
-    func chatDidType()
+    func chatDidType(letter: String)
     func chatDidSend()
+    func chatDidClearAll()
 
 }

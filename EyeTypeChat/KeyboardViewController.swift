@@ -15,8 +15,6 @@ class KeyboardViewController: UIViewController, EyeControllable {
     var chatControllable:ChatControllable! = nil
     var keyButtons = [[UIButton]]()
     var selectedButton: UIButton?
-    var selectedConversation: Conversation?
-    lazy var chatModel: ChatViewModel = ChatViewModel(currentConversation: self.selectedConversation!)
     let margin: CGFloat = 8
 
     var keys = [
@@ -26,7 +24,7 @@ class KeyboardViewController: UIViewController, EyeControllable {
         ["o", "p", "q", "r", "s", "t"],
         ["u", "v", "w", "x", "y", "z"],
         ["5", "6", "7", "8", "9", "0"],
-        ["space", "comma", "point", "send"]
+        ["space", "comma", "point", "clear", "send"]
     ]
     var showCancel = false
     var currentLine = 0
@@ -35,7 +33,6 @@ class KeyboardViewController: UIViewController, EyeControllable {
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        selectedConversation = nil
     }
 
     override func viewDidLoad() {
@@ -99,26 +96,23 @@ class KeyboardViewController: UIViewController, EyeControllable {
     }
     
     func updateWritingText(letter:String) {
-        var newText:String =  chatModel.currentWritingText + letter
-        chatModel.currentWritingText = newText
-        NSLog("Text: '%@'", chatModel.currentWritingText)
-//        chatControllable.chatDidType()
+        chatControllable.chatDidType(letter)
     }
 
     func sendWrittenText() {
-        //TODO: display written text as a row
-        NSLog("Message: '%@'", chatModel.currentWritingText)
-//        chatControllable.chatDidSend()
+        chatControllable.chatDidSend()
     }
     
     func clearWrittenText() {
-        chatModel.clearWrittenText()
+        chatControllable.chatDidClearAll()
     }
     
     func executeActionAccordingToKeySelection(key: String){
         switch key{
             case "send":
                 sendWrittenText()
+            case "clear":
+                clearWrittenText()
             case "point":
                 updateWritingText(".")
             case "comma":
