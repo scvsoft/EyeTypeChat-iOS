@@ -35,15 +35,20 @@ class ChatViewController: BaseMenuViewController {
         let conversationList = MockedData.getConversationList(managedObjectContext!)
         var chatItem: Conversation? = nil
         chatItem = conversationList[0]
-        self.selectedConversation = chatItem
-        self.navigationItem.title = chatItem?.title
-        loadMessagesItems(forChat: self.selectedConversation!)
+        loadConversation(chatItem!)
         super.viewDidLoad()
+    }
+    
+    func loadConversation(chat: Conversation){
+        self.selectedConversation = chat
+        self.navigationItem.title = chat.title
+        loadMessagesItems(forChat: self.selectedConversation!)
     }
     
     func loadMessagesItems(forChat chat: Conversation) {
         messageItems.removeAll(keepCapacity: true)
         chatModel = ChatViewModel(currentConversation: chat)
+        writingTextField.text = chatModel.currentWritingText
         self.selectedConversation = chatModel.currentConversation
         // load dynamically the mocked conversations
         let messages = MockedData.getOrderedMessages(managedObjectContext!, forConversation: chat)

@@ -63,7 +63,7 @@ class MockedData {
         var groupConversation = Conversation.createConversation("Trip to NY", account: telegramAccount, betweenContacts: contactsInGroupChat, messages: nil, entity: "Conversation", context: dataContext)
         
         // create some messages for group chat
-        currentDate = MockedData.dateByAddingMinutes(-15, date: NSDate())
+        currentDate = MockedData.dateByAddingMinutes(-50, date: NSDate())
         var msg11 = Message.createMessage("Hello everyone!", sentDateTime: currentDate!, conversation: bffConversation, fromContact: secondContact, entity: "Message", context: dataContext)
         
         currentDate = MockedData.dateByAddingMinutes(1, date: currentDate)
@@ -76,10 +76,10 @@ class MockedData {
         var msg14 = Message.createMessage("He sent a confirmation email", sentDateTime: currentDate!, conversation: groupConversation, fromContact: thirdContact, entity: "Message", context: dataContext)
         
         currentDate = MockedData.dateByAddingMinutes(1, date: currentDate)
-        var msg15 = Message.createMessage("January 16th?", sentDateTime: currentDate!, conversation: groupConversation, fromContact: nil, entity: "Message", context:dataContext)
+        var msg15 = Message.createMessage("The plane arrives to NY at 10pm", sentDateTime: currentDate!, conversation: groupConversation, fromContact: nil, entity: "Message", context:dataContext)
         
         currentDate = MockedData.dateByAddingMinutes(1, date: currentDate)
-        var msg16 = Message.createMessage("Right", sentDateTime: currentDate!, conversation: groupConversation, fromContact: secondContact, entity: "Message", context: dataContext)
+        var msg16 = Message.createMessage("Perfect", sentDateTime: currentDate!, conversation: groupConversation, fromContact: secondContact, entity: "Message", context: dataContext)
         
         var groupMessages = NSMutableSet()
         groupMessages.addObjectsFromArray([msg11, msg12, msg13, msg14, msg15, msg16])
@@ -109,38 +109,53 @@ class MockedData {
     }
     
     class func getConversationList(dataContext: NSManagedObjectContext) -> [Conversation]{
-        let fetchRequest = NSFetchRequest(entityName: "TelegramAccount")
-        if let fetchResults = dataContext.executeFetchRequest(fetchRequest, error: nil) as? [TelegramAccount] {
-            // TODO: order by date
-            return fetchResults[0].conversations!.allObjects as [Conversation]
+        let fetchRequest = NSFetchRequest(entityName: "Conversation")
+        if let fetchResults = dataContext.executeFetchRequest(fetchRequest, error: nil) as? [Conversation]
+        {
+            var lastMessageInConversations = NSMutableSet()
+            for conversation in fetchResults{
+                if let lastMessage = MockedData.getLastMessage(dataContext, forConversation: conversation){
+                    lastMessageInConversations.addObject(lastMessage)
+                }
+            }
+            var orderedConversations = NSMutableSet()
+            for sms in lastMessageInConversations {
+                let msg = sms as Message
+                var chat = msg.conversation as Conversation
+                println(chat.title)
+                orderedConversations.addObject(chat)
+            }
+            return orderedConversations.allObjects as [Conversation]
         }
-        return []
+
+       return []
+    }
+    
+    
+    class func getLastMessage(dataContext: NSManagedObjectContext, forConversation chat: Conversation?) -> Message?{
+       let orderedMsgs = MockedData.getOrderedMessages(dataContext, forConversation: chat)
+       return orderedMsgs?.lastObject as Message?
+       
     }
     
     class func getOrderedMessages(dataContext: NSManagedObjectContext, forConversation chat: Conversation?) -> NSArray?{
        
-        let fetchRequest = NSFetchRequest(entityName: "TelegramAccount")
-        if let fetchResults = dataContext.executeFetchRequest(fetchRequest, error: nil) as? [TelegramAccount] {
-            
-                println("Chat: \(chat?.title)")
-                let messages = chat?.messages
-                var msgsArray = messages?.allObjects as [Message]
-                
-                var sortedMsgs : [Message] = msgsArray
-                sortedMsgs.sort({$0.sentDateTime.timeIntervalSinceNow < $1.sentDateTime.timeIntervalSinceNow})
-                
-                return sortedMsgs
+        let fetchRequest = NSFetchRequest(entityName: "Message")
+        var chatText = chat!.title
+        let chatPredicate = NSPredicate(format: "SELF.conversation.title = %@", chatText)
+        fetchRequest.predicate = chatPredicate
+        var dateDescriptor = NSSortDescriptor(key: "sentDateTime", ascending: true)
+        fetchRequest.sortDescriptors = [dateDescriptor]
+        if let fetchResults = dataContext.executeFetchRequest(fetchRequest, error: nil) as? [Message]
+        {
+            return fetchResults
         }
         return nil
     }
 
-    
-    
     class func addNewMessage(dataContext: NSManagedObjectContext, message: String, conversation: Conversation){
         var currentDate: NSDate? = NSDate();
         var msg = Message.createMessage(message, sentDateTime: currentDate!, conversation: conversation, fromContact: nil, entity: "Message", context: dataContext)
-        
-        
     }
     
     class func printMockedData(dataContext: NSManagedObjectContext){

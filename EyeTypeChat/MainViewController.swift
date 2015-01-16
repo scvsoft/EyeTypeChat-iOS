@@ -101,7 +101,7 @@ class MainViewController: ETVideoSourceViewController , ChatControllable {
 
     func selectConversation(chat: Conversation){
         let c = self.chatNavigationController.topViewController as ChatViewController
-        c.loadMessagesItems(forChat: chat)
+        c.loadConversation(chat)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
