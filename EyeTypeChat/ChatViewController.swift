@@ -32,11 +32,13 @@ class ChatViewController: BaseMenuViewController {
     
     
     override func viewDidLoad() {
-        let conversationList = MockedData.getConversationList(managedObjectContext!)
-        var chatItem: Conversation? = nil
-        chatItem = conversationList[0]
-        loadConversation(chatItem!)
+        loadConversations()
         super.viewDidLoad()
+    }
+    
+    func loadConversations(){
+        let conversationList = MockedData.getConversationList(managedObjectContext!)
+        loadConversation(conversationList[0] as Conversation)
     }
     
     func loadConversation(chat: Conversation){
@@ -114,7 +116,7 @@ class ChatViewController: BaseMenuViewController {
     
     func sendMessage() {
         addNewMessage()
-        loadMessagesItems(forChat: self.selectedConversation!)
+        loadConversations()
         clearCurrentText()
     }
     

@@ -22,11 +22,17 @@ class ConversationListViewController: BaseMenuViewController {
         }
         }()
     
-    var conversationItems = [Conversation]()
+    var conversationItems = NSOrderedSet()
     
     override func viewDidLoad() {
         loadConversationItems()
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        loadConversationItems()
+        self.tableView.reloadData()
+        super.viewWillAppear(animated)
     }
     
     func loadConversationItems() {
@@ -62,7 +68,7 @@ class ConversationListViewController: BaseMenuViewController {
             eyeDidCancel()
         }
         else {
-            self.mainViewController?.selectConversation(conversationItems[indexPath.row])
+            self.mainViewController?.selectConversation(conversationItems[indexPath.row] as Conversation)
             let vc = storyboard!.instantiateViewControllerWithIdentifier("fixedMenu") as FixedMenuViewController
             vc.menuName = "conversation"
             navigationController?.pushViewController(vc, animated: true)

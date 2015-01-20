@@ -91,9 +91,7 @@ class MockedData {
         // associate conversation list with the Telegram account
         telegramAccount.conversations = conversationSet
         
-
     }
-   
     
     class func getUserIdentifier(dataContext: NSManagedObjectContext) -> String?{
         let fetchRequest = NSFetchRequest(entityName: "TelegramAccount")
@@ -108,27 +106,28 @@ class MockedData {
         return NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.CalendarUnitMinute, value: value, toDate: date!, options: NSCalendarOptions.SearchBackwards)
     }
     
-    class func getConversationList(dataContext: NSManagedObjectContext) -> [Conversation]{
+    class func getConversationList(dataContext: NSManagedObjectContext) -> NSOrderedSet{
         let fetchRequest = NSFetchRequest(entityName: "Conversation")
+        var orderedConversation = NSMutableOrderedSet()
         if let fetchResults = dataContext.executeFetchRequest(fetchRequest, error: nil) as? [Conversation]
         {
-            var lastMessageInConversations = NSMutableSet()
+            var lastMessageInConversations = NSMutableOrderedSet()
             for conversation in fetchResults{
                 if let lastMessage = MockedData.getLastMessage(dataContext, forConversation: conversation){
                     lastMessageInConversations.addObject(lastMessage)
                 }
             }
-            var orderedConversations = NSMutableSet()
-            for sms in lastMessageInConversations {
-                let msg = sms as Message
-                var chat = msg.conversation as Conversation
-                println(chat.title)
-                orderedConversations.addObject(chat)
+            
+            let sortDateDescriptor = NSSortDescriptor(key: "sentDateTime", ascending: false)
+            lastMessageInConversations.sortUsingDescriptors([sortDateDescriptor])
+            lastMessageInConversations.enumerateObjectsUsingBlock { (elem, idx, stop) -> Void in
+                let sms = elem as Message
+                let chat = sms.conversation as Conversation
+                orderedConversation.addObject(chat)
             }
-            return orderedConversations.allObjects as [Conversation]
         }
 
-       return []
+       return orderedConversation
     }
     
     
@@ -139,7 +138,6 @@ class MockedData {
     }
     
     class func getOrderedMessages(dataContext: NSManagedObjectContext, forConversation chat: Conversation?) -> NSArray?{
-       
         let fetchRequest = NSFetchRequest(entityName: "Message")
         var chatText = chat!.title
         let chatPredicate = NSPredicate(format: "SELF.conversation.title = %@", chatText)
