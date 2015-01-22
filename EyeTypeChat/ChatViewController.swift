@@ -99,6 +99,8 @@ class ChatViewController: BaseMenuViewController {
 
         cell.textLabel?.text = messageFrom + ": " + messageItems[indexPath.row].message.text
         cell.detailTextLabel?.text = MockedData.getFormattedDate(messageItems[indexPath.row].message.sentDateTime)
+        cell.selectionStyle = .None
+        cell.userInteractionEnabled = false
         return cell
     }
     

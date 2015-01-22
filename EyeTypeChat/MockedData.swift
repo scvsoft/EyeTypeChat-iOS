@@ -30,7 +30,7 @@ class MockedData {
         // create bff chat
         var contactsInBffChat = NSMutableSet()
         contactsInBffChat.addObject(firstContact)
-        var bffConversation = Conversation.createConversation("BBF", account: telegramAccount, betweenContacts: contactsInBffChat, messages: nil, entity: "Conversation", context: dataContext)
+        var bffConversation = Conversation.createConversation(nil, account: telegramAccount, betweenContacts: contactsInBffChat, messages: nil, entity: "Conversation", context: dataContext)
         
         // create some messages for bff chat
         var currentDate: NSDate? = NSDate();
@@ -60,11 +60,11 @@ class MockedData {
         // create group chat
         var contactsInGroupChat = NSMutableSet()
         contactsInGroupChat.addObjectsFromArray([secondContact, thirdContact])
-        var groupConversation = Conversation.createConversation("Trip to NY", account: telegramAccount, betweenContacts: contactsInGroupChat, messages: nil, entity: "Conversation", context: dataContext)
+        var groupConversation = Conversation.createConversation(nil, account: telegramAccount, betweenContacts: contactsInGroupChat, messages: nil, entity: "Conversation", context: dataContext)
         
         // create some messages for group chat
         currentDate = MockedData.dateByAddingMinutes(-50, date: NSDate())
-        var msg11 = Message.createMessage("Hello everyone!", sentDateTime: currentDate!, conversation: bffConversation, fromContact: secondContact, entity: "Message", context: dataContext)
+        var msg11 = Message.createMessage("Hello everyone!", sentDateTime: currentDate!, conversation: groupConversation, fromContact: secondContact, entity: "Message", context: dataContext)
         
         currentDate = MockedData.dateByAddingMinutes(1, date: currentDate)
         var msg12 = Message.createMessage("Hi!", sentDateTime: currentDate!, conversation: groupConversation, fromContact: nil, entity: "Message", context: dataContext)
@@ -85,6 +85,35 @@ class MockedData {
         groupMessages.addObjectsFromArray([msg11, msg12, msg13, msg14, msg15, msg16])
         groupConversation.messages = groupMessages
         conversationSet.addObject(groupConversation)
+        
+        // create multiple group chat
+        var contactsInMultipleGroupChat = NSMutableSet()
+        contactsInMultipleGroupChat.addObjectsFromArray([firstContact, secondContact, thirdContact])
+        var multipleGroupConversation = Conversation.createConversation(nil, account: telegramAccount, betweenContacts: contactsInMultipleGroupChat, messages: nil, entity: "Conversation", context: dataContext)
+        
+        // create some messages for multiple group chat
+        currentDate = MockedData.dateByAddingMinutes(-50, date: NSDate())
+        var msg17 = Message.createMessage("1, 2, 3", sentDateTime: currentDate!, conversation: multipleGroupConversation, fromContact: secondContact, entity: "Message", context: dataContext)
+        
+        currentDate = MockedData.dateByAddingMinutes(1, date: currentDate)
+        var msg18 = Message.createMessage("4", sentDateTime: currentDate!, conversation: multipleGroupConversation, fromContact: firstContact, entity: "Message", context: dataContext)
+        
+        currentDate = MockedData.dateByAddingMinutes(0, date: currentDate)
+        var msg19 = Message.createMessage("5", sentDateTime: currentDate!, conversation: multipleGroupConversation, fromContact: secondContact, entity: "Message", context: dataContext)
+        
+        currentDate = MockedData.dateByAddingMinutes(2, date: currentDate)
+        var msg20 = Message.createMessage("6, 7, 7, 7", sentDateTime: currentDate!, conversation: multipleGroupConversation, fromContact: thirdContact, entity: "Message", context: dataContext)
+        
+        currentDate = MockedData.dateByAddingMinutes(1, date: currentDate)
+        var msg21 = Message.createMessage("blah blah 8", sentDateTime: currentDate!, conversation: multipleGroupConversation, fromContact: nil, entity: "Message", context:dataContext)
+        
+        currentDate = MockedData.dateByAddingMinutes(1, date: currentDate)
+        var msg22 = Message.createMessage("9Blah! ", sentDateTime: currentDate!, conversation: multipleGroupConversation, fromContact: secondContact, entity: "Message", context: dataContext)
+        
+        var multipleGroupMessages = NSMutableSet()
+        multipleGroupMessages.addObjectsFromArray([msg17, msg18, msg19, msg20, msg21, msg22])
+        multipleGroupConversation.messages = multipleGroupMessages
+        conversationSet.addObject(multipleGroupConversation)
         
         // associate contact list with the Telegram account
         telegramAccount.contacts = contactSet
