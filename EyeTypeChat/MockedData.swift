@@ -34,10 +34,10 @@ class MockedData {
         
         // create some messages for bff chat
         var currentDate: NSDate? = NSDate();
-        currentDate = MockedData.dateByAddingMinutes(-30, date: currentDate)
-        var msg01 = Message.createMessage("Hi Mary!", sentDateTime: currentDate!, conversation: bffConversation, fromContact: nil, entity: "Message", context: dataContext)
+        let yesterdayDate: NSDate? = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitDay, value: -1, toDate: NSDate(), options: nil)
+        var msg01 = Message.createMessage("Hi Mary!", sentDateTime: yesterdayDate!, conversation: bffConversation, fromContact: nil, entity: "Message", context: dataContext)
         
-        currentDate = MockedData.dateByAddingMinutes(1, date: currentDate)
+        currentDate = MockedData.dateByAddingMinutes(-30, date: currentDate)
         var msg02 = Message.createMessage("How are you?", sentDateTime: currentDate!, conversation: bffConversation, fromContact: nil, entity: "Message", context: dataContext)
         
         currentDate = MockedData.dateByAddingMinutes(2, date: currentDate)
@@ -173,11 +173,7 @@ class MockedData {
         fetchRequest.predicate = chatPredicate
         var dateDescriptor = NSSortDescriptor(key: "sentDateTime", ascending: true)
         fetchRequest.sortDescriptors = [dateDescriptor]
-        if let fetchResults = dataContext.executeFetchRequest(fetchRequest, error: nil) as? [Message]
-        {
-            return fetchResults
-        }
-        return nil
+        return dataContext.executeFetchRequest(fetchRequest, error: nil) as? [Message]
     }
 
     class func addNewMessage(dataContext: NSManagedObjectContext, message: String, conversation: Conversation){
@@ -230,9 +226,24 @@ class MockedData {
     
     class func getFormattedDate(dateTime: NSDate)-> String{
         let dateStringFormatter = NSDateFormatter()
-        dateStringFormatter.dateFormat = "hh:mm"// MM-dd-yyyy
+        if MockedData.isSameDay(dateTime, thanDate: NSDate()){
+            dateStringFormatter.dateFormat = "hh:mm"
+        }
+        else{
+            dateStringFormatter.dateFormat = "MM-dd-yyyy hh:mm"
+        }
         return dateStringFormatter.stringFromDate(dateTime)
     }
    
+    class func isSameDay(dateTime: NSDate, thanDate anotherDate: NSDate)-> Bool {
+        let calendar = NSCalendar.currentCalendar()
+        let unitFlags: NSCalendarUnit = .YearCalendarUnit | .MonthCalendarUnit | .DayCalendarUnit
+        let componentDateTime = calendar.components(unitFlags, fromDate: dateTime)
+        let componentToday = calendar.components(unitFlags, fromDate: anotherDate)
+        let day = componentDateTime.day == componentToday.day
+        let month = componentDateTime.month == componentToday.month
+        let year = componentDateTime.year == componentToday.year
+        return (day && month && year)
+    }
     
 }
