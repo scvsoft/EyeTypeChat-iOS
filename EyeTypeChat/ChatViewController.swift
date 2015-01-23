@@ -97,9 +97,13 @@ class ChatViewController: BaseMenuViewController {
             messageFrom = "\(MockedData.getUserIdentifier(managedObjectContext!)!)"
         }
 
-        cell.textLabel?.text = messageFrom + ": " + messageItems[indexPath.row].message.text
+        cell.textLabel?.text = messageFrom + ":\n" + messageItems[indexPath.row].message.text
+        cell.textLabel?.lineBreakMode = .ByWordWrapping
+        cell.textLabel?.numberOfLines = 0
         cell.detailTextLabel?.text = MockedData.getFormattedDate(messageItems[indexPath.row].message.sentDateTime)
+        cell.detailTextLabel?.textColor = UIColor.blueColor()
         cell.selectionStyle = .None
+        cell.imageView?.image = UIImage(named: "user_default.png")
         cell.userInteractionEnabled = false
         return cell
     }
