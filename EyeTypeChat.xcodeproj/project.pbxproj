@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		231A94151A72AE38008CD10E /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A94141A72AE38008CD10E /* ChatTableViewCell.swift */; };
 		232CE5321A3A3D6100C94EE8 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232CE5311A3A3D6100C94EE8 /* Account.swift */; };
 		232CE5341A3A3D9300C94EE8 /* TelegramAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232CE5331A3A3D9300C94EE8 /* TelegramAccount.swift */; };
 		232CE5361A3A3DCF00C94EE8 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232CE5351A3A3DCF00C94EE8 /* Conversation.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		231A94141A72AE38008CD10E /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		232CE5311A3A3D6100C94EE8 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = model/Account.swift; sourceTree = "<group>"; };
 		232CE5331A3A3D9300C94EE8 /* TelegramAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TelegramAccount.swift; path = model/TelegramAccount.swift; sourceTree = "<group>"; };
 		232CE5351A3A3DCF00C94EE8 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Conversation.swift; path = model/Conversation.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				236ACA291A44BEFB003D1F53 /* Controllers */,
 				887A2CC41A0BDB4500094E3C /* AppDelegate.swift */,
 				23C120CD1A4340F8004D7B5E /* MockedData.swift */,
+				231A94141A72AE38008CD10E /* ChatTableViewCell.swift */,
 				88A759AB1A2F9D4D0005B04C /* EyeControllable.swift */,
 				237E245F1A56E4E90031B30A /* ChatControllable.swift */,
 				8856809E1A374B2D005F2BB0 /* fixedMenus.plist */,
@@ -358,6 +361,11 @@
 				TargetAttributes = {
 					887A2CBE1A0BDB4500094E3C = {
 						CreatedOnToolsVersion = 6.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					887A2CD61A0BDB4500094E3C = {
 						CreatedOnToolsVersion = 6.1;
@@ -465,6 +473,7 @@
 				2333C0A21A51A0F900784BEA /* ChatViewModel.swift in Sources */,
 				232CE5361A3A3DCF00C94EE8 /* Conversation.swift in Sources */,
 				887A2CCA1A0BDB4500094E3C /* MainViewController.swift in Sources */,
+				231A94151A72AE38008CD10E /* ChatTableViewCell.swift in Sources */,
 				232CE53A1A3A3E9C00C94EE8 /* Contact.swift in Sources */,
 				232CE5341A3A3D9300C94EE8 /* TelegramAccount.swift in Sources */,
 				237E24601A56E4E90031B30A /* ChatControllable.swift in Sources */,

@@ -149,11 +149,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LD3-Kw-qJX">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatCell" rowHeight="70" id="LD3-Kw-qJX" customClass="ChatTableViewCell" customModule="EyeTypeChat" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LD3-Kw-qJX" id="S7A-w8-qH5">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" misplaced="YES" text="sentDate" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0P-GN-dy5">
+                                            <rect key="frame" x="170" y="8" width="70" height="26.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" misplaced="YES" text="from" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2g-Mr-9M9">
+                                            <rect key="frame" x="44" y="8" width="111" height="26.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" misplaced="YES" text="message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hU-aB-Nzy">
+                                            <rect key="frame" x="44" y="36" width="127" height="26"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hB4-vX-WC4">
+                                            <rect key="frame" x="8" y="8" width="28" height="26.5"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="n0P-GN-dy5" firstAttribute="trailing" secondItem="S7A-w8-qH5" secondAttribute="trailingMargin" id="2nl-6v-m0e"/>
+                                        <constraint firstItem="0hU-aB-Nzy" firstAttribute="top" secondItem="n2g-Mr-9M9" secondAttribute="bottom" constant="1.5" id="9Pr-a6-cxy"/>
+                                        <constraint firstItem="n2g-Mr-9M9" firstAttribute="top" secondItem="S7A-w8-qH5" secondAttribute="topMargin" id="EUA-oV-75b"/>
+                                        <constraint firstItem="hB4-vX-WC4" firstAttribute="top" secondItem="S7A-w8-qH5" secondAttribute="topMargin" id="VKn-9m-CJ9"/>
+                                        <constraint firstItem="n2g-Mr-9M9" firstAttribute="leading" secondItem="hB4-vX-WC4" secondAttribute="trailing" constant="8" id="YC4-ft-l8f"/>
+                                        <constraint firstItem="0hU-aB-Nzy" firstAttribute="leading" secondItem="n2g-Mr-9M9" secondAttribute="leading" id="a6H-Kg-fSc"/>
+                                        <constraint firstItem="n0P-GN-dy5" firstAttribute="leading" secondItem="n2g-Mr-9M9" secondAttribute="trailing" constant="15" id="lag-ID-oj2"/>
+                                        <constraint firstItem="hB4-vX-WC4" firstAttribute="leading" secondItem="S7A-w8-qH5" secondAttribute="leadingMargin" id="nB1-cj-rIW"/>
+                                        <constraint firstItem="0hU-aB-Nzy" firstAttribute="bottom" secondItem="S7A-w8-qH5" secondAttribute="bottomMargin" id="nJw-Od-OcG"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="fromLabel" destination="n2g-Mr-9M9" id="FO5-it-5iz"/>
+                                    <outlet property="messageLabel" destination="0hU-aB-Nzy" id="O49-sQ-ZSo"/>
+                                    <outlet property="photoView" destination="hB4-vX-WC4" id="07E-gZ-bjo"/>
+                                    <outlet property="sentDateLabel" destination="n0P-GN-dy5" id="Kir-o9-Yhx"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -178,7 +217,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdp-vI-Qei" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1031" y="95.5"/>
+            <point key="canvasLocation" x="1031" y="92.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6lq-bn-IxS">

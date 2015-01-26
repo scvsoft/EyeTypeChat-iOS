@@ -89,7 +89,17 @@ class ChatViewController: BaseMenuViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = self.chatCell()
+        var cell:ChatTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("chatCell") as ChatTableViewCell
+        
+        //configuring cell
+        cell.textLabel?.lineBreakMode = .ByWordWrapping
+        cell.textLabel?.numberOfLines = 0
+        cell.selectionStyle = .None
+        cell.userInteractionEnabled = false
+        
+        //getting values for cell
+        let messageText = messageItems[indexPath.row].message.text
+        let messageSentDate = messageItems[indexPath.row].message.sentDateTime
         var messageFrom:String
         if let from = messageItems[indexPath.row].message.fromContact{
             messageFrom = "\(from.name)"
@@ -97,14 +107,11 @@ class ChatViewController: BaseMenuViewController {
             messageFrom = "\(MockedData.getUserIdentifier(managedObjectContext!)!)"
         }
 
-        cell.textLabel?.text = messageFrom + ":\n" + messageItems[indexPath.row].message.text
-        cell.textLabel?.lineBreakMode = .ByWordWrapping
-        cell.textLabel?.numberOfLines = 0
-        cell.detailTextLabel?.text = MockedData.getFormattedDate(messageItems[indexPath.row].message.sentDateTime)
-        cell.detailTextLabel?.textColor = UIColor.blueColor()
-        cell.selectionStyle = .None
-        cell.imageView?.image = UIImage(named: "user_default.png")
-        cell.userInteractionEnabled = false
+        let userDefaultImage = "user_default.png"
+        
+        //loading cell
+        cell.loadItem(from: messageFrom, message: messageText, sentDate: messageSentDate, imageName: userDefaultImage)
+        
         return cell
     }
     
