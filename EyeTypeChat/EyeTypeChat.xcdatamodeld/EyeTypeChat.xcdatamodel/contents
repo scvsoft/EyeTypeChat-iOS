@@ -6,6 +6,7 @@
         <relationship name="conversations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Conversation" inverseName="account" inverseEntity="Conversation" syncable="YES"/>
     </entity>
     <entity name="Contact" representedClassName="EyeTypeChat.Contact" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="account" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="contacts" inverseEntity="Account" syncable="YES"/>
@@ -25,9 +26,9 @@
     <entity name="TelegramAccount" representedClassName="EyeTypeChat.TelegramAccount" parentEntity="Account" syncable="YES"/>
     <elements>
         <element name="Account" positionX="-396" positionY="-277" width="128" height="90"/>
-        <element name="Contact" positionX="-162" positionY="-234" width="128" height="88"/>
+        <element name="Contact" positionX="-162" positionY="-234" width="128" height="103"/>
         <element name="Conversation" positionX="-234" positionY="-112" width="128" height="103"/>
         <element name="Message" positionX="-443" positionY="-76" width="128" height="103"/>
-        <element name="TelegramAccount" positionX="-396" positionY="-160" width="128" height="43"/>
+        <element name="TelegramAccount" positionX="-396" positionY="-160" width="128" height="45"/>
     </elements>
 </model>

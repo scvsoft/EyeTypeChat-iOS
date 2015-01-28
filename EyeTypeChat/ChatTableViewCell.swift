@@ -18,9 +18,10 @@ class ChatTableViewCell: UITableViewCell {
     
     @IBOutlet weak var sentDateLabel: UILabel!
     
-    func loadItem(from fromMessage: String, message: String, sentDate: NSDate, imageName: String) {
+    func loadItem(from fromMessage: String, fromContactColor: UIColor, message: String, sentDate: NSDate, imageName: String) {
    
         fromLabel.text = fromMessage
+        fromLabel.textColor = fromContactColor
         messageLabel.text = message
         sentDateLabel.text = MockedData.getFormattedDate(sentDate)
         photoView.image = UIImage(named: imageName)

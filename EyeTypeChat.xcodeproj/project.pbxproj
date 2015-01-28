@@ -12,8 +12,8 @@
 		232CE5341A3A3D9300C94EE8 /* TelegramAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232CE5331A3A3D9300C94EE8 /* TelegramAccount.swift */; };
 		232CE5361A3A3DCF00C94EE8 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232CE5351A3A3DCF00C94EE8 /* Conversation.swift */; };
 		232CE5381A3A3E4D00C94EE8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232CE5371A3A3E4D00C94EE8 /* Message.swift */; };
-		232CE53A1A3A3E9C00C94EE8 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232CE5391A3A3E9C00C94EE8 /* Contact.swift */; };
 		2333C0A21A51A0F900784BEA /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2333C0A11A51A0F900784BEA /* ChatViewModel.swift */; };
+		2338BB451A794B5D00901026 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2338BB441A794B5D00901026 /* Contact.swift */; };
 		236ACA281A44B8B2003D1F53 /* EyeControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A759AB1A2F9D4D0005B04C /* EyeControllable.swift */; };
 		237E24601A56E4E90031B30A /* ChatControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237E245F1A56E4E90031B30A /* ChatControllable.swift */; };
 		23C120CE1A4340F8004D7B5E /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C120CD1A4340F8004D7B5E /* MockedData.swift */; };
@@ -73,8 +73,8 @@
 		232CE5331A3A3D9300C94EE8 /* TelegramAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TelegramAccount.swift; path = model/TelegramAccount.swift; sourceTree = "<group>"; };
 		232CE5351A3A3DCF00C94EE8 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Conversation.swift; path = model/Conversation.swift; sourceTree = "<group>"; };
 		232CE5371A3A3E4D00C94EE8 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = model/Message.swift; sourceTree = "<group>"; };
-		232CE5391A3A3E9C00C94EE8 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = model/Contact.swift; sourceTree = "<group>"; };
 		2333C0A11A51A0F900784BEA /* ChatViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		2338BB441A794B5D00901026 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = model/Contact.swift; sourceTree = "<group>"; };
 		237E245F1A56E4E90031B30A /* ChatControllable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatControllable.swift; sourceTree = "<group>"; };
 		23C120CD1A4340F8004D7B5E /* MockedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
 		23FAF5441A52EDED00ADD423 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 		23BA3E251A38EB1500C5AD4B /* Core Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				232CE5391A3A3E9C00C94EE8 /* Contact.swift */,
+				2338BB441A794B5D00901026 /* Contact.swift */,
 				232CE5371A3A3E4D00C94EE8 /* Message.swift */,
 				232CE5351A3A3DCF00C94EE8 /* Conversation.swift */,
 				232CE5331A3A3D9300C94EE8 /* TelegramAccount.swift */,
@@ -474,7 +474,6 @@
 				232CE5361A3A3DCF00C94EE8 /* Conversation.swift in Sources */,
 				887A2CCA1A0BDB4500094E3C /* MainViewController.swift in Sources */,
 				231A94151A72AE38008CD10E /* ChatTableViewCell.swift in Sources */,
-				232CE53A1A3A3E9C00C94EE8 /* Contact.swift in Sources */,
 				232CE5341A3A3D9300C94EE8 /* TelegramAccount.swift in Sources */,
 				237E24601A56E4E90031B30A /* ChatControllable.swift in Sources */,
 				88A759B11A2F9FC10005B04C /* KeyboardViewController.swift in Sources */,
@@ -482,6 +481,7 @@
 				887A2CC81A0BDB4500094E3C /* EyeTypeChat.xcdatamodeld in Sources */,
 				88A759A11A2F7B070005B04C /* MainViewModel.swift in Sources */,
 				8823D7B11A30E8B500271406 /* UIViewController+EyeType.swift in Sources */,
+				2338BB451A794B5D00901026 /* Contact.swift in Sources */,
 				885680A21A374BB8005F2BB0 /* FixedMenuViewController.swift in Sources */,
 				885680A51A376E47005F2BB0 /* SwiftBridge.m in Sources */,
 				885680A71A378E55005F2BB0 /* BaseMenuViewController+Commands.swift in Sources */,

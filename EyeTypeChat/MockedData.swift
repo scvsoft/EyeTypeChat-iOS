@@ -19,9 +19,9 @@ class MockedData {
         
         // create contact list
         var contactSet = NSMutableSet()
-        var firstContact = Contact.createContact("Mary", phoneNumber: 263823827, account: telegramAccount, entity: "Contact", context:  dataContext)
-        var secondContact = Contact.createContact("Anna", phoneNumber: 1161690000, account: telegramAccount, entity: "Contact", context: dataContext)
-        var thirdContact = Contact.createContact("John", phoneNumber: 328378738, account: telegramAccount, entity: "Contact", context: dataContext)
+        var firstContact = Contact.createContact("Mary", phoneNumber: 263823827, color: MockedData.randomColor(), account: telegramAccount, entity: "Contact", context:  dataContext)
+        var secondContact = Contact.createContact("Anna", phoneNumber: 1161690000, color: MockedData.randomColor(), account: telegramAccount, entity: "Contact", context: dataContext)
+        var thirdContact = Contact.createContact("John", phoneNumber: 328378738, color: MockedData.randomColor(), account: telegramAccount, entity: "Contact", context: dataContext)
         contactSet.addObjectsFromArray([firstContact, secondContact, thirdContact])
         
         // create conversations
@@ -244,6 +244,55 @@ class MockedData {
         let month = componentDateTime.month == componentToday.month
         let year = componentDateTime.year == componentToday.year
         return (day && month && year)
+    }
+    
+    /*
+    Distributed under The MIT License:
+    http://opensource.org/licenses/mit-license.php
+    
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+    
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+    LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+    OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+    WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    */
+    class func randomColor() -> UIColor{
+        // from https://gist.github.com/kylefox/1689973
+        
+        let value1 = UInt32(128)
+        let value2 : Float32 = 256.0
+        let value3 : Float32 = 0.5
+        
+        let hueRandom = Float(arc4random() % 256)
+        let hueValue =  hueRandom / 256.0 //  0.0 to 1.0
+        let hue = CGFloat(hueValue)
+        print(hueValue)
+        
+        let saturationRandom = arc4random() % value1
+        let saturationValue = Float(saturationRandom) / value2 + value3 //  0.5 to 1.0, away from white
+        let saturation = CGFloat(saturationValue)
+        print(saturationValue)
+        
+        let brightnessRandom = arc4random() % value1
+        let brightnessValue = Float(brightnessRandom) / value2 + value3 //  0.5 to 1.0, away from black
+        let brightness = CGFloat(brightnessValue)
+        print(brightnessValue)
+        
+        let color = UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
+        return color
     }
     
 }

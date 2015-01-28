@@ -101,16 +101,19 @@ class ChatViewController: BaseMenuViewController {
         let messageText = messageItems[indexPath.row].message.text
         let messageSentDate = messageItems[indexPath.row].message.sentDateTime
         var messageFrom:String
+        var contactColor:UIColor
         if let from = messageItems[indexPath.row].message.fromContact{
             messageFrom = "\(from.name)"
+            contactColor = from.color
         }else{
             messageFrom = "\(MockedData.getUserIdentifier(managedObjectContext!)!)"
+            contactColor = UIColor.blueColor() // default color for user: blue
         }
 
         let userDefaultImage = "user_default.png"
         
         //loading cell
-        cell.loadItem(from: messageFrom, message: messageText, sentDate: messageSentDate, imageName: userDefaultImage)
+        cell.loadItem(from: messageFrom, fromContactColor: contactColor, message: messageText, sentDate: messageSentDate, imageName: userDefaultImage)
         
         return cell
     }
