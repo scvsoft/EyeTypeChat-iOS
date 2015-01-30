@@ -24,7 +24,8 @@ class ChatTableViewCell: UITableViewCell {
         fromLabel.textColor = fromContactColor
         messageLabel.text = message
         sentDateLabel.text = MockedData.getFormattedDate(sentDate)
-        photoView.image = UIImage(named: imageName)
+        let image = UIImage(named: imageName)
+        photoView.image = image?.colorizeWith(fromContactColor)
     
     }
 }

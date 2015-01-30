@@ -69,7 +69,7 @@ class MainViewController: ETVideoSourceViewController , ChatControllable {
     
     func createAndPrintMockedData(){
         var mockedData = MockedData(dataContext: managedObjectContext!)
-        MockedData.printMockedData(managedObjectContext!)
+        //  MockedData.printMockedData(managedObjectContext!)
     }
 
     

@@ -17,6 +17,7 @@
 		236ACA281A44B8B2003D1F53 /* EyeControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A759AB1A2F9D4D0005B04C /* EyeControllable.swift */; };
 		237E24601A56E4E90031B30A /* ChatControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237E245F1A56E4E90031B30A /* ChatControllable.swift */; };
 		23C120CE1A4340F8004D7B5E /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C120CD1A4340F8004D7B5E /* MockedData.swift */; };
+		23E593011A7BC78E003DCE61 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E593001A7BC78E003DCE61 /* UIImage+Color.swift */; };
 		23FAF5451A52EDED00ADD423 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FAF5441A52EDED00ADD423 /* ChatViewController.swift */; };
 		5E9B341BA996967017148759 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A49492BC4CA902EDA58BC35 /* libPods.a */; };
 		8823D7AE1A30E3D200271406 /* ConversationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8823D7AD1A30E3D200271406 /* ConversationListViewController.swift */; };
@@ -77,6 +78,7 @@
 		2338BB441A794B5D00901026 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = model/Contact.swift; sourceTree = "<group>"; };
 		237E245F1A56E4E90031B30A /* ChatControllable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatControllable.swift; sourceTree = "<group>"; };
 		23C120CD1A4340F8004D7B5E /* MockedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
+		23E593001A7BC78E003DCE61 /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		23FAF5441A52EDED00ADD423 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		8823D7AD1A30E3D200271406 /* ConversationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationListViewController.swift; sourceTree = "<group>"; };
 		8823D7B01A30E8B500271406 /* UIViewController+EyeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+EyeType.swift"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				887A2CC41A0BDB4500094E3C /* AppDelegate.swift */,
 				23C120CD1A4340F8004D7B5E /* MockedData.swift */,
 				231A94141A72AE38008CD10E /* ChatTableViewCell.swift */,
+				23E593001A7BC78E003DCE61 /* UIImage+Color.swift */,
 				88A759AB1A2F9D4D0005B04C /* EyeControllable.swift */,
 				237E245F1A56E4E90031B30A /* ChatControllable.swift */,
 				8856809E1A374B2D005F2BB0 /* fixedMenus.plist */,
@@ -484,6 +487,7 @@
 				2338BB451A794B5D00901026 /* Contact.swift in Sources */,
 				885680A21A374BB8005F2BB0 /* FixedMenuViewController.swift in Sources */,
 				885680A51A376E47005F2BB0 /* SwiftBridge.m in Sources */,
+				23E593011A7BC78E003DCE61 /* UIImage+Color.swift in Sources */,
 				885680A71A378E55005F2BB0 /* BaseMenuViewController+Commands.swift in Sources */,
 				8823D7B31A30F65E00271406 /* BaseMenuViewController.swift in Sources */,
 				23C120CE1A4340F8004D7B5E /* MockedData.swift in Sources */,

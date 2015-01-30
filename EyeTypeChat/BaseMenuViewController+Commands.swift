@@ -15,5 +15,4 @@ extension BaseMenuViewController {
         viewController.chatControllable = mainViewController?
         self.navigationController!.pushViewController(viewController, animated: true)
     }
-
 }

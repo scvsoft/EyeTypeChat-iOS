@@ -58,7 +58,8 @@ class ChatViewController: BaseMenuViewController {
             let chatItem = MessageItem(item: item as Message)
             messageItems.append(chatItem)
         }
-        self.tableView.reloadData()
+        tableView.reloadData()
+        goToBottom()
     }
     
     func addNewMessage(){
@@ -111,7 +112,7 @@ class ChatViewController: BaseMenuViewController {
         }
 
         let userDefaultImage = "user_default.png"
-        
+                
         //loading cell
         cell.loadItem(from: messageFrom, fromContactColor: contactColor, message: messageText, sentDate: messageSentDate, imageName: userDefaultImage)
         
@@ -139,6 +140,16 @@ class ChatViewController: BaseMenuViewController {
     func clearCurrentText(){
         chatModel.currentWritingText = ""
         writingTextField.text = chatModel.currentWritingText
+    }
+    
+    func goToBottom(){
+        tableView.scrollToRowAtIndexPath(lastIndexPath(), atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+    }
+    
+    func lastIndexPath() -> NSIndexPath{
+        let lastRowIndex = tableView.numberOfRowsInSection(0) - 1
+        print(lastRowIndex)
+        return NSIndexPath(forRow: lastRowIndex, inSection: 0)
     }
     
     
