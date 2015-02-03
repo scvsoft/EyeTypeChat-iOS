@@ -32,13 +32,18 @@ class ChatViewController: BaseMenuViewController {
     
     
     override func viewDidLoad() {
+        setupTableView()
         loadConversations()
         super.viewDidLoad()
-        setupTableView()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        goToBottom()
     }
     
     func setupTableView(){
-        self.tableView.estimatedRowHeight = 50.0
+        self.tableView.estimatedRowHeight = 60.0
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
@@ -65,6 +70,7 @@ class ChatViewController: BaseMenuViewController {
             messageItems.append(chatItem)
         }
         tableView.reloadData()
+        tableView.layoutIfNeeded()
         goToBottom()
     }
     
@@ -149,12 +155,11 @@ class ChatViewController: BaseMenuViewController {
     }
     
     func goToBottom(){
-        tableView.scrollToRowAtIndexPath(lastIndexPath(), atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+        tableView.scrollToRowAtIndexPath(lastIndexPath(), atScrollPosition: UITableViewScrollPosition.Top, animated: false)
     }
     
     func lastIndexPath() -> NSIndexPath{
         let lastRowIndex = tableView.numberOfRowsInSection(0) - 1
-        print(lastRowIndex)
         return NSIndexPath(forRow: lastRowIndex, inSection: 0)
     }
     
