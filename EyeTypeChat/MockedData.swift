@@ -76,7 +76,7 @@ class MockedData {
         var msg14 = Message.createMessage("He sent a confirmation email", sentDateTime: currentDate!, conversation: groupConversation, fromContact: thirdContact, entity: "Message", context: dataContext)
         
         currentDate = MockedData.dateByAddingMinutes(1, date: currentDate)
-        var msg15 = Message.createMessage("The plane arrives to NY at 10pm", sentDateTime: currentDate!, conversation: groupConversation, fromContact: nil, entity: "Message", context:dataContext)
+        var msg15 = Message.createMessage("The plane arrives to NY at 10pm 8pm 7278pm shsjjs hsdhsha test testing eyeun 11 34pm hddueok ma shs aew uwi blah bluon uy 66282 syu or s wop ww bb asrsueoq mlq test.", sentDateTime: currentDate!, conversation: groupConversation, fromContact: nil, entity: "Message", context:dataContext)
         
         currentDate = MockedData.dateByAddingMinutes(1, date: currentDate)
         var msg16 = Message.createMessage("Perfect", sentDateTime: currentDate!, conversation: groupConversation, fromContact: secondContact, entity: "Message", context: dataContext)

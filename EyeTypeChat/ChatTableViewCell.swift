@@ -25,6 +25,7 @@ class ChatTableViewCell: UITableViewCell {
         fromLabel.font = UIFont .preferredFontForTextStyle(UIFontTextStyleHeadline)
         messageLabel.text = message
         messageLabel.font = UIFont .preferredFontForTextStyle(UIFontTextStyleBody)
+        messageLabel.numberOfLines = 0
         sentDateLabel.text = MockedData.getFormattedDate(sentDate)
         sentDateLabel.font = UIFont .preferredFontForTextStyle(UIFontTextStyleSubheadline)
         let image = UIImage(named: imageName)

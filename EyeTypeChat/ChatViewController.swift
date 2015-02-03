@@ -34,6 +34,12 @@ class ChatViewController: BaseMenuViewController {
     override func viewDidLoad() {
         loadConversations()
         super.viewDidLoad()
+        setupTableView()
+    }
+    
+    func setupTableView(){
+        self.tableView.estimatedRowHeight = 50.0
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func loadConversations(){
@@ -91,7 +97,7 @@ class ChatViewController: BaseMenuViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell:ChatTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("chatCell") as ChatTableViewCell
-        
+    
         //configuring cell
         cell.textLabel?.lineBreakMode = .ByWordWrapping
         cell.textLabel?.numberOfLines = 0
