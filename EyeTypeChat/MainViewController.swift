@@ -121,17 +121,17 @@ class MainViewController: ETVideoSourceViewController , ChatControllable {
     
     // MARK: ChatControllable
     
-    func chatDidType(letter: String) {
+    func chatWillType(letter: String) {
         let c = self.chatNavigationController.topViewController as ChatViewController
         c.type(letter)
     }
     
-    func chatDidSend() {
+    func chatWillSend() {
         let c = self.chatNavigationController.topViewController as ChatViewController
         c.sendMessage()
     }
     
-    func chatDidClearAll() {
+    func chatWillClearAll() {
         let c = self.chatNavigationController.topViewController as ChatViewController
         c.clearCurrentText()
     }

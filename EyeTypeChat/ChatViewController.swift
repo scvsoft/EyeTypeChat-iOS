@@ -69,6 +69,11 @@ class ChatViewController: BaseMenuViewController {
             let chatItem = MessageItem(item: item as Message)
             messageItems.append(chatItem)
         }
+        updateUI();
+        
+    }
+    
+    func updateUI(){
         tableView.reloadData()
         tableView.layoutIfNeeded()
         goToBottom()
@@ -155,7 +160,7 @@ class ChatViewController: BaseMenuViewController {
     }
     
     func goToBottom(){
-        tableView.scrollToRowAtIndexPath(lastIndexPath(), atScrollPosition: UITableViewScrollPosition.Top, animated: false)
+        tableView.scrollToRowAtIndexPath(lastIndexPath(), atScrollPosition: UITableViewScrollPosition.None, animated: false)
     }
     
     func lastIndexPath() -> NSIndexPath{

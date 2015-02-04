@@ -96,15 +96,15 @@ class KeyboardViewController: UIViewController, EyeControllable {
     }
     
     func updateWritingText(letter:String) {
-        chatControllable.chatDidType(letter)
+        chatControllable.chatWillType(letter)
     }
 
     func sendWrittenText() {
-        chatControllable.chatDidSend()
+        chatControllable.chatWillSend()
     }
     
     func clearWrittenText() {
-        chatControllable.chatDidClearAll()
+        chatControllable.chatWillClearAll()
     }
     
     func executeActionAccordingToKeySelection(key: String){
