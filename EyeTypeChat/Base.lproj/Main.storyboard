@@ -178,19 +178,12 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="0hU-aB-Nzy" firstAttribute="top" secondItem="n2g-Mr-9M9" secondAttribute="bottom" constant="1.5" id="1DG-69-TsV"/>
-                                        <constraint firstItem="0hU-aB-Nzy" firstAttribute="top" secondItem="S7A-w8-qH5" secondAttribute="topMargin" constant="25" id="3x6-8l-8gl"/>
                                         <constraint firstItem="n2g-Mr-9M9" firstAttribute="top" secondItem="hB4-vX-WC4" secondAttribute="top" constant="1" id="7N5-D1-Z4c"/>
                                         <constraint firstItem="n2g-Mr-9M9" firstAttribute="bottom" secondItem="hB4-vX-WC4" secondAttribute="bottom" id="83K-qk-C4h"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="hB4-vX-WC4" secondAttribute="bottom" constant="27" id="Asm-VD-XQG"/>
                                         <constraint firstItem="n0P-GN-dy5" firstAttribute="baseline" secondItem="n2g-Mr-9M9" secondAttribute="firstBaseline" id="EDY-1S-UPy"/>
                                         <constraint firstItem="n0P-GN-dy5" firstAttribute="leading" secondItem="hB4-vX-WC4" secondAttribute="trailing" constant="94" id="EuI-O0-QvC"/>
-                                        <constraint firstItem="n2g-Mr-9M9" firstAttribute="top" secondItem="S7A-w8-qH5" secondAttribute="topMargin" constant="-3" id="Hxo-Vj-bgl"/>
-                                        <constraint firstItem="n0P-GN-dy5" firstAttribute="top" secondItem="S7A-w8-qH5" secondAttribute="top" id="ILL-JH-pv0"/>
-                                        <constraint firstItem="n0P-GN-dy5" firstAttribute="top" secondItem="hB4-vX-WC4" secondAttribute="top" id="JC1-Fd-vkA"/>
                                         <constraint firstItem="0hU-aB-Nzy" firstAttribute="bottom" secondItem="S7A-w8-qH5" secondAttribute="bottomMargin" id="JNx-gY-oCx"/>
-                                        <constraint firstItem="hB4-vX-WC4" firstAttribute="top" secondItem="S7A-w8-qH5" secondAttribute="topMargin" constant="-4" id="Pln-Fc-ipq"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="0hU-aB-Nzy" secondAttribute="trailing" constant="139" id="cgF-gb-mas"/>
-                                        <constraint firstItem="0hU-aB-Nzy" firstAttribute="top" secondItem="n2g-Mr-9M9" secondAttribute="bottom" constant="-2" id="cz7-qT-ft2"/>
                                         <constraint firstItem="n2g-Mr-9M9" firstAttribute="leading" secondItem="hB4-vX-WC4" secondAttribute="trailing" constant="8" symbolic="YES" id="d2p-ft-qgo"/>
                                         <constraint firstItem="0hU-aB-Nzy" firstAttribute="leading" secondItem="hB4-vX-WC4" secondAttribute="trailing" constant="8" symbolic="YES" id="dla-R8-I5G"/>
                                         <constraint firstItem="n0P-GN-dy5" firstAttribute="leading" secondItem="hB4-vX-WC4" secondAttribute="trailing" constant="94" id="lhG-KC-5iG"/>
@@ -202,17 +195,6 @@
                                         <constraint firstItem="0hU-aB-Nzy" firstAttribute="leading" secondItem="S7A-w8-qH5" secondAttribute="leadingMargin" constant="35" id="vpn-12-TGa"/>
                                         <constraint firstItem="n0P-GN-dy5" firstAttribute="top" secondItem="S7A-w8-qH5" secondAttribute="topMargin" constant="-4" id="yqG-15-c7o"/>
                                     </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="Asm-VD-XQG"/>
-                                            <exclude reference="Pln-Fc-ipq"/>
-                                            <exclude reference="Hxo-Vj-bgl"/>
-                                            <exclude reference="3x6-8l-8gl"/>
-                                            <exclude reference="cz7-qT-ft2"/>
-                                            <exclude reference="ILL-JH-pv0"/>
-                                            <exclude reference="JC1-Fd-vkA"/>
-                                        </mask>
-                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="fromLabel" destination="n2g-Mr-9M9" id="FO5-it-5iz"/>

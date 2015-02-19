@@ -79,6 +79,10 @@ class ChatViewController: BaseMenuViewController {
         goToBottom()
     }
     
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        updateUI()
+    }
+    
     func addNewMessage(){
         MockedData.addNewMessage(managedObjectContext!, message: self.writingTextField.text, conversation: self.chatModel.currentConversation)
     }

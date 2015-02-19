@@ -10,7 +10,6 @@ import Foundation
 
 extension UIImage {
     
-    //TODO: move to another class or make an extension
     func colorizeWith(color: UIColor) -> UIImage {
         
         UIGraphicsBeginImageContext(self.size)
