@@ -12,18 +12,19 @@ class KeyboardViewController: UIViewController, EyeControllable {
 
     @IBOutlet var keyboardContainer: UIView!
     @IBOutlet var cancelButton: UIButton!
+    var chatControllable:ChatControllable! = nil
     var keyButtons = [[UIButton]]()
     var selectedButton: UIButton?
     let margin: CGFloat = 8
 
     var keys = [
-        ["A", "b", "c", "d", "1", "2"],
-        ["E", "f", "g", "h", "3", "4"],
-        ["I", "j", "k", "l", "m", "n"],
-        ["O", "p", "q", "r", "s", "t"],
-        ["U", "v", "w", "x", "y", "z"],
+        ["a", "b", "c", "d", "1", "2"],
+        ["e", "f", "g", "h", "3", "4"],
+        ["i", "j", "k", "l", "m", "n"],
+        ["o", "p", "q", "r", "s", "t"],
+        ["u", "v", "w", "x", "y", "z"],
         ["5", "6", "7", "8", "9", "0"],
-        ["space", "comma", "point"]
+        ["space", "comma", "point", "clear", "send"]
     ]
     var showCancel = false
     var currentLine = 0
@@ -39,6 +40,7 @@ class KeyboardViewController: UIViewController, EyeControllable {
         createKeyboard()
     }
 
+    
     func createKeyboard() {
         self.keyboardContainer.removeConstraints(self.keyboardContainer.constraints())
         var i = 0
@@ -92,7 +94,36 @@ class KeyboardViewController: UIViewController, EyeControllable {
         }
         selectedButton!.selected = true
     }
+    
+    func updateWritingText(letter:String) {
+        chatControllable.chatWillType(letter)
+    }
 
+    func sendWrittenText() {
+        chatControllable.chatWillSend()
+    }
+    
+    func clearWrittenText() {
+        chatControllable.chatWillClearAll()
+    }
+    
+    func executeActionAccordingToKeySelection(key: String){
+        switch key{
+            case "send":
+                sendWrittenText()
+            case "clear":
+                clearWrittenText()
+            case "point":
+                updateWritingText(".")
+            case "comma":
+                updateWritingText(",")
+            case "space":
+                updateWritingText(" ")
+            default:
+                updateWritingText(key)
+            
+        }
+    }
 // MARK: EyeControllable
 
     func eyeDidAccept() {
@@ -101,11 +132,13 @@ class KeyboardViewController: UIViewController, EyeControllable {
                 eyeDidCancel()
             }
             else {
-                NSLog("key '%@'", selectedButton!.titleForState(UIControlState.Normal)!)
+                let keySelection = selectedButton!.titleForState(UIControlState.Normal)!
+                NSLog("key '%@'", keySelection)
                 currentLine = 0
                 currentRow = 0
                 lineSelected = false
                 updateSelection()
+                executeActionAccordingToKeySelection(keySelection)
             }
         }
         else {

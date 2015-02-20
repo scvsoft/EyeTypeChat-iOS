@@ -11,6 +11,7 @@ import UIKit
 class MainViewModel: ETVideoSourceViewModel {
 
     var tickInterval: NSTimeInterval = 1
+    var inputMessage = ""
 
     override func executeOKAction() {
     }

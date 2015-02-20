@@ -33,7 +33,7 @@ class BaseMenuViewController: UITableViewController, EyeControllable {
         }
         return cell!
     }
-
+    
     func validRow(indexPath: NSIndexPath) -> NSIndexPath {
         if (indexPath.section >= numberOfSectionsInTableView(tableView)) {
             return NSIndexPath(forRow: 0, inSection: 0)

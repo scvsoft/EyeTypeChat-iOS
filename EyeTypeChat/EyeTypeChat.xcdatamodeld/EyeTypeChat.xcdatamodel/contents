@@ -1,4 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Account" representedClassName="EyeTypeChat.Account" isAbstract="YES" syncable="YES">
+        <attribute name="userIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contacts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contact" inverseName="account" inverseEntity="Contact" syncable="YES"/>
+        <relationship name="conversations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Conversation" inverseName="account" inverseEntity="Conversation" syncable="YES"/>
+    </entity>
+    <entity name="Contact" representedClassName="EyeTypeChat.Contact" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="account" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="contacts" inverseEntity="Account" syncable="YES"/>
+    </entity>
+    <entity name="Conversation" representedClassName="EyeTypeChat.Conversation" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="account" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="conversations" inverseEntity="Account" syncable="YES"/>
+        <relationship name="betweenContacts" toMany="YES" deletionRule="Nullify" destinationEntity="Contact" syncable="YES"/>
+        <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Message" inverseName="conversation" inverseEntity="Message" syncable="YES"/>
+    </entity>
+    <entity name="Message" representedClassName="EyeTypeChat.Message" syncable="YES">
+        <attribute name="sentDateTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="conversation" maxCount="1" deletionRule="Nullify" destinationEntity="Conversation" inverseName="messages" inverseEntity="Conversation" syncable="YES"/>
+        <relationship name="fromContact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" syncable="YES"/>
+    </entity>
+    <entity name="TelegramAccount" representedClassName="EyeTypeChat.TelegramAccount" parentEntity="Account" syncable="YES"/>
+    <elements>
+        <element name="Account" positionX="-396" positionY="-277" width="128" height="90"/>
+        <element name="Contact" positionX="-162" positionY="-234" width="128" height="103"/>
+        <element name="Conversation" positionX="-234" positionY="-112" width="128" height="103"/>
+        <element name="Message" positionX="-443" positionY="-76" width="128" height="103"/>
+        <element name="TelegramAccount" positionX="-396" positionY="-160" width="128" height="45"/>
+    </elements>
 </model>

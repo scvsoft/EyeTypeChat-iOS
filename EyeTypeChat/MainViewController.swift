@@ -7,25 +7,35 @@
 //
 
 import UIKit
+import CoreData
 
-class MainViewController: ETVideoSourceViewController {
+class MainViewController: ETVideoSourceViewController , ChatControllable {
 
     var timer: NSTimer?
     var subNavigationController: UINavigationController!
-    var conversationNavigationController: UINavigationController!
+    var chatNavigationController: UINavigationController!
     var ignoreNextTick = false
-
-    var myModel: MainViewModel {
-        get {
-            return self.model as MainViewModel
+    
+    lazy var managedObjectContext : NSManagedObjectContext? = {
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        if let managedObjectContext = appDelegate.managedObjectContext {
+            return managedObjectContext
         }
-    }
-
+        else {
+            return nil
+        }
+    }()
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.model = MainViewModel()
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        createAndPrintMockedData()
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         startDetect()
@@ -50,6 +60,19 @@ class MainViewController: ETVideoSourceViewController {
         self.videoSource.stopRunning()
     }
 
+    
+    var myModel: MainViewModel {
+        get {
+            return self.model as MainViewModel
+        }
+    }
+    
+    func createAndPrintMockedData(){
+        var mockedData = MockedData(dataContext: managedObjectContext!)
+        //  MockedData.printMockedData(managedObjectContext!)
+    }
+
+    
     @IBAction func eyeDidAccept() {
         if let controllable = subNavigationController.topViewController as? EyeControllable {
             controllable.eyeDidAccept()
@@ -73,14 +96,20 @@ class MainViewController: ETVideoSourceViewController {
         else {
             ignoreNextTick = false
         }
+        
     }
 
+    func selectConversation(chat: Conversation){
+        let c = self.chatNavigationController.topViewController as ChatViewController
+        c.loadConversation(chat)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "subNavigationController") {
             subNavigationController = segue.destinationViewController as UINavigationController
         }
-        else if (segue.identifier == "conversation") {
-            conversationNavigationController = segue.destinationViewController as UINavigationController
+        else if (segue.identifier == "chatSegue") {
+            chatNavigationController = segue.destinationViewController as UINavigationController
         }
     }
 
@@ -88,6 +117,23 @@ class MainViewController: ETVideoSourceViewController {
         get {
             return self
         }
+    }
+    
+    // MARK: ChatControllable
+    
+    func chatWillType(letter: String) {
+        let c = self.chatNavigationController.topViewController as ChatViewController
+        c.type(letter)
+    }
+    
+    func chatWillSend() {
+        let c = self.chatNavigationController.topViewController as ChatViewController
+        c.sendMessage()
+    }
+    
+    func chatWillClearAll() {
+        let c = self.chatNavigationController.topViewController as ChatViewController
+        c.clearCurrentText()
     }
 
 }
